@@ -1,0 +1,133 @@
+@import "../../sass/misc/env";
+@import "../../sass/misc/mixins";
+@import "../../sass/misc/fonts";
+
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    transition: all 0.5s ease;
+
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 0;
+    }
+
+    .header__nav{
+        display: flex;
+    }
+}
+
+.header__nav_item{
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    font-family: OpenSansBold, sans-serif;
+
+    &:not(:last-of-type){
+        margin-right: 20px;
+    }
+
+    a{
+        color: #fff;
+        text-shadow: 3px 2px 4px rgba(35, 33, 38, 0.96);
+    }
+
+    ul{
+        opacity: 0;
+        position: absolute;
+        bottom: -5px;
+        transform: translateY(100%);
+        left: 0;
+        background: rgba(67, 67, 67, 0.5);
+        backdrop-filter: blur(15px);
+        // filter: blur(10px);
+        border-radius: 7px;
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 170px;
+        padding: 15px;
+        display: flex;
+        transition: all 0.4s ease-in-out;
+    }
+
+    &:hover{
+        ul{
+            opacity: 1;
+        }
+    }
+}
+
+.default-state{
+
+}
+
+.scroll-down{
+    .header{
+        transform: translateY(-100%);
+    }
+}
+
+.scrolled-view{
+    .header{
+        background-color:#BA0C2F;
+    }
+}
+
+.header__lang{
+    border: 1px solid #fff;
+    border-radius: 30px;
+    padding: 10px;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    transition: all 0.3s ease-in-out;
+    font-family: OpenSans, sans-serif;
+
+    &:hover{
+        cursor: pointer;
+        opacity: 0.7;
+    }
+
+    &::after{
+        display: block;
+        margin-left: 11px;
+        content: url('../img/icons/arrow__right.svg');
+        width: 8px;
+        height: 4px;
+    }
+}
+
+.swiper-container-fade {
+    &.swiper-container-free-mode {
+      .swiper-slide {
+        transition-timing-function: ease-out;
+      }
+    }
+    .swiper-slide {
+      pointer-events: none;
+      transition-property: opacity;
+      .swiper-slide {
+        pointer-events: none;
+      }
+    }
+    .swiper-slide-active {
+      &,
+      & .swiper-slide-active {
+        pointer-events: auto;
+      }
+    }
+  }
+  

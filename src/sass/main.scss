@@ -1,0 +1,12 @@
+@import "../../node_modules/normalize-scss/sass/normalize/import-now";
+@import "../sass/misc/env";
+@import "../sass/misc/mixins";
+@import "../sass/misc/adjustment";
+@import "../sass/misc/fonts";
+@import "../sass/misc/common";
+
+@import "../pages/indexStyle";
+@import "../pages/contact";
+@import "../components/header/headerStyle";
+@import "../components/footer/footerStyle";
+
