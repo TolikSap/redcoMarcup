@@ -60,7 +60,7 @@ btnUkraine.addEventListener("click", function(){
     $(this).addClass('active');
     $('.contacts__info_item.active').removeClass('active');
     $('.contacts__info_item.Ukraine').addClass('active');
-    $('.contacts__intro').css("background-image", "url('../img/contacts/Ukraine__bg.jpg')");
+    $('.contacts__intro').css("background-image", "url('https://toliksap.github.io/redcoMarcup/dist/img/contacts/Ukraine__bg.jpg')");
 });
 
 btnGeorgia.addEventListener("click", function(){
@@ -70,7 +70,7 @@ btnGeorgia.addEventListener("click", function(){
     $(this).addClass('active');
     $('.contacts__info_item.active').removeClass('active');
     $('.contacts__info_item.Georgia').addClass('active');
-    $('.contacts__intro').css("background-image",  "url('../img/contacts/contacts__bg.png')");
+    $('.contacts__intro').css("background-image",  "url('https://toliksap.github.io/redcoMarcup/dist/img/contacts/contacts__bg.png')");
 });
 
 btnRussia.addEventListener("click", function(){
