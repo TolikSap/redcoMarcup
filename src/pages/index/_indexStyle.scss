@@ -1,6 +1,17 @@
-@import "../sass/misc/env";
-@import "../sass/misc/mixins";
-@import "../sass/misc/fonts";
+@import "../../sass/misc/env";
+@import "../../sass/misc/mixins";
+@import "../../sass/misc/fonts";
+
+.main-page{
+    .intro{
+        .contacts__widget{
+            position: absolute;
+            left: 20%;
+            bottom: 40px;
+            z-index: 10;
+        }
+    }
+}
 
 .intro{
     position: relative;
@@ -195,132 +206,135 @@
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
 
-.investors{
-    background-image: url('../img/index/investors__bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 939px;
-
-    .investors__title{
-        margin-bottom: 10px;
-    }
-}
-
-.investors__subtitle{
-    font-family: OpenSans, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 22px;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.investors__info{
-    display: flex;
-
-    .investors__list{
-        display: flex;
-        flex-direction: column;
-        margin-right: auto;
-        max-width: 379px;
-
-        &_item{
-            display: flex;
-            flex-direction: column;
-            font-style: normal;
-            font-family: OpenSans, sans-serif;
-            padding-left: 55px;
-            
-            &:not(:last-of-type){
-                margin-bottom: 40px;
-            }
-
-            &_text{
-                color: #F5F5F5;
-                font-weight: normal;
-                font-size: 16px;
-                line-height: 22px;
-            }
-
-            &_title{
-                color: #fff;
-                font-family: OpenSansBold, sans-serif;
-                font-size: 20px;
-                line-height: 27px;
-                margin-bottom: 5px;
-            }
+.main-page{
+    .investors{
+        background-image: url('../img/index/investors__bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 939px;
+    
+        .investors__title{
+            margin-bottom: 10px;
         }
     }
-}
-
-.investors__descr{
-    background: #25282B;
-    font-family: OpenSans, sans-serif;
-    font-style: normal;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-top: 40px;
-
-    &_title{
-        color: #fff;
-        font-weight: bold;
-        font-size: 20px;
-        line-height: 27px;
-        margin-bottom: 20px;
-        padding-left: 30px;
-        font-family: OpenSansBold, sans-serif;
-    }
-
-    .investors__descr_list{
+    
+    .investors__subtitle{
+        font-family: OpenSans, sans-serif;
+        font-style: normal;
+        font-weight: normal;
         font-size: 16px;
         line-height: 22px;
-        color: #F5F5F5;
-        font-weight: normal;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .investors__info{
         display: flex;
-        flex-wrap: wrap;
-        max-width: 700px;
-        margin: 0 auto 16px;
-        padding-left: 30px;
-        padding-right: 30px;
-
-        .investors__descr_list_item{
-            max-width: 49%;
-            padding-left: 10px;
+    
+        .investors__list{
             display: flex;
-
-            &::before{
-                content: '';
-                display: block;
-                min-width: 10px;
-                min-height: 10px;
-                max-width: 10px;
-                max-height: 10px;
-                background: #BA0C2F;
-                border-radius: 50%;
-                margin-right: 10px;
-                margin-top: 8px;
-            }
-
-            &:first-of-type,
-            &:nth-of-type(2){
-                margin-bottom: 43px;
-            }
-
-            &:nth-of-type(odd){
-                margin-right: 10px;
+            flex-direction: column;
+            margin-right: auto;
+            max-width: 379px;
+    
+            &_item{
+                display: flex;
+                flex-direction: column;
+                font-style: normal;
+                font-family: OpenSans, sans-serif;
+                padding-left: 55px;
+                
+                &:not(:last-of-type){
+                    margin-bottom: 40px;
+                }
+    
+                &_text{
+                    color: #F5F5F5;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 22px;
+                }
+    
+                &_title{
+                    color: #fff;
+                    font-family: OpenSansBold, sans-serif;
+                    font-size: 20px;
+                    line-height: 27px;
+                    margin-bottom: 5px;
+                }
             }
         }
     }
-
-    .investors__descr_img{
-        max-width: 700px;
-        max-height: 300px;
-        object-fit: contain;
+    
+    .investors__descr{
+        background: #25282B;
+        font-family: OpenSans, sans-serif;
+        font-style: normal;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-top: 40px;
+    
+        &_title{
+            color: #fff;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 27px;
+            margin-bottom: 20px;
+            padding-left: 30px;
+            font-family: OpenSansBold, sans-serif;
+        }
+    
+        .investors__descr_list{
+            font-size: 16px;
+            line-height: 22px;
+            color: #F5F5F5;
+            font-weight: normal;
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 700px;
+            margin: 0 auto 16px;
+            padding-left: 30px;
+            padding-right: 30px;
+    
+            .investors__descr_list_item{
+                max-width: 49%;
+                padding-left: 10px;
+                display: flex;
+    
+                &::before{
+                    content: '';
+                    display: block;
+                    min-width: 10px;
+                    min-height: 10px;
+                    max-width: 10px;
+                    max-height: 10px;
+                    background: #BA0C2F;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                    margin-top: 8px;
+                }
+    
+                &:first-of-type,
+                &:nth-of-type(2){
+                    margin-bottom: 43px;
+                }
+    
+                &:nth-of-type(odd){
+                    margin-right: 10px;
+                }
+            }
+        }
+    
+        .investors__descr_img{
+            max-width: 700px;
+            max-height: 300px;
+            object-fit: contain;
+        }
     }
 }
+
 
 .projects{
     background: #25282B;
@@ -1036,130 +1050,54 @@
 
 }
 
-
-
-.faq{
-    background-color: #25282B;
-
-    .container{
-        display: grid;
-        grid-template-areas: "header header"
-                             "list text";
-        padding-bottom: 0;
-    }
-
-    &__title{
-        text-align: left;
-        margin-bottom: 40px;
-        width: 100%;
-        grid-area: header;
-    }
+.main-page{
+    .faq{
+        background-color: #25282B;
     
-    .faq__list{
-        min-width: 570px;
-        max-width: 570px;
-        grid-area: list;
-        margin-right: 100px;
+        .container{
+            display: grid;
+            grid-template-areas: "header header"
+                                 "list text";
+            padding-bottom: 0;
+        }
 
-        &_item{
-            margin-bottom: 10px;
-            color: #FFFFFF;
-            position: relative;
-            padding-left: 28px;
-            transition: all 0.3s ease-in-out;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            padding-left: 30px;
-            padding-right: 15px;
+        &__title{
+            text-align: left;
+            width: 100%;
+            grid-area: header;
+        }
 
-            &:hover{
-                cursor: pointer;
-                opacity: 0.8;
-            }
+        .faq__list{
+            min-width: 570px;
+            max-width: 570px;
+            margin-right: 100px;
 
-            &::before{
-                position: absolute;
-                left: 0px;
-                top: 20px;
-                content: url('../img/index/plus.svg');
-                width: 13px;
-                height: 13px;
-            }
-
-            &::after{
-                position: absolute;
-                right: 10px;
-                top: 20px;
-                width: 13px;
-                height: 6px;
-                content: url('../img/index/arrow__bottom.svg');
-            }
-
-            .faq__list_item_title{
-                font-size: 16px;
-                line-height: 22px;
-                font-family: OpenSans, sans-serif;
-                margin-bottom: 10px;
-            }
-
-            .faq__list_item_text{
-                position: absolute;
-                z-index: -1;
-                opacity: 0;
-                transition: all 0.3s ease-in-out;
-                font-family: OpenSans, sans-serif;
-                font-size: 16px;
-                line-height: 22px;
-            }
-
-            &.active{
-                border: 1px solid #414141;
-                box-sizing: border-box;
-                border-radius: 15px;
-
-                .faq__list_item_text{
-                    position: relative;
-                    z-index: 1;
-                    opacity: 1;
+            &_item{
+                padding-left: 30px;
+                padding-right: 15px;
+    
+                &::before{
+                    left: 0px;
+                    top: 20px;
                 }
 
                 .faq__list_item_title{
-                    font-size: 18px;
-                    line-height: 25px;
-                    font-family: OpenSansBold, sans-serif;
+                    margin-bottom: 10px;
                 }
 
-                &::before{
-                    position: absolute;
-                    left: 10px;
-                    top: 25px;
-                    content: url('../img/index/minus.svg');
-                    width: 13px;
-                    height: 13px;
-                }
-    
-                &::after{
-                    position: absolute;
-                    top: 20px;
-                    width: 13px;
-                    height: 6px;
-                    content: url('../img/index/arrow__top.svg');
+                &.active{
+                    &::before{
+                        position: absolute;
+                        left: 10px;
+                        top: 25px;
+                        content: url('../img/index/minus.svg');
+                        width: 13px;
+                        height: 13px;
+                    }
                 }
             }
         }
-    }
-
-    .faq__text{
-        max-width: 49%;
-        grid-area: text;
-        max-width: 500px;
-        font-family: OpenSans, sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 22px;
-        color: #fff;
-    }
+    }      
 }
 
 

@@ -51,3 +51,14 @@ const stickyHeader = () =>{
 }
 
 stickyHeader();
+
+function faq(){
+    let faqItem = document.getElementsByClassName("faq__list_item");
+
+    for (let i = 0; i < faqItem.length; i++) {
+        faqItem[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        });
+    }
+}
+faq();

@@ -30,7 +30,7 @@ gulp.task('sass', () => {
 });
   
 gulp.task('img',() => {
-  return gulp.src('src/assets/**/*.*')
+   gulp.src('src/assets/**/*.*')
   .pipe(imagemin([
     imagemin.gifsicle({interlaced: true}),
     imagemin.jpegtran({progressive: true}),
@@ -51,8 +51,7 @@ gulp.task('fonts',() => {
 })
 
 gulp.task('html', () => {
-  return gulp
-	.src('src/pages/*.html')
+   gulp.src('src/pages/**/*.html')
   .pipe(rename({dirname: ''}))
   .pipe(fileinclude())
   .pipe(htmlmin({ removeComments: true }))
@@ -62,7 +61,7 @@ gulp.task('html', () => {
 });
 
 gulp.task('js', () =>
-  gulp.src('src/pages/**/*.js')
+  gulp.src('src/js/**/*.js')
   .pipe(plumber()) 
   .pipe(babel({
     presets: ['env']
@@ -85,8 +84,8 @@ gulp.task('reload', () => {
   });
 });
 
-gulp.task('watch', ['reload','sass', 'html','js', 'fonts', 'img'], () => {
+gulp.task('watch', ['reload','sass', 'html','js'], () => {
   gulp.watch(['src/**/*.scss'], ['sass'], browserSync.reload);
-  gulp.watch(['src/pages/*.html'], ['html']);
+  gulp.watch(['src/pages/**/*.html'], ['html']);
   gulp.watch(['src/pages/**/*.js'], ['js'])
 });

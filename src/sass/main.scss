@@ -5,8 +5,11 @@
 @import "../sass/misc/fonts";
 @import "../sass/misc/common";
 
-@import "../pages/indexStyle";
-@import "../pages/contact";
+// import components
 @import "../components/header/headerStyle";
 @import "../components/footer/footerStyle";
 
+// import pages
+@import "../pages/index/indexStyle";
+@import "../pages/contact/contact";
+@import "../pages/investors/investors";
