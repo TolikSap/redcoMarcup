@@ -8,7 +8,7 @@
 
     .container{
         padding-top: 0;
-        padding-bottom: 140px;
+        padding-bottom: 80px;
 
         .blog__filter_wrapper{
             display: flex;
@@ -209,6 +209,7 @@
 
     .container{
         padding-top: 0;
+        padding-bottom: 80px;
         position: relative;
 
         .projects__banner{
@@ -373,7 +374,7 @@
 
         .blog__content_news{
             position: relative;
-
+            margin-bottom: 30px;
             &:hover{
                 cursor: pointer;
 
@@ -459,7 +460,7 @@
 }
 
 .blog__feedbackForm{
-    margin-top: 80px;
+    margin-top: 50px;
     margin-bottom: 80px;
     position: relative;
     padding-top: 90px;
