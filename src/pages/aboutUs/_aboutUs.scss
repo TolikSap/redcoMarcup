@@ -269,19 +269,6 @@
             &:nth-last-child(-n+4){
                 margin-bottom: 0;
             }
-
-            &:nth-child(1) .contacts__list_item_link{    
-                background-image: url('../img/aboutUS/skype.svg');
-            }
-        
-            &:nth-child(2) .contacts__list_item_link{
-                background-image: url('../img/aboutUS/viber.svg');
-            }
-        
-            &:nth-of-type(3) .contacts__list_item_link{
-                background-image: url('../img/aboutUS/telegram.svg');
-            }
-
             .aboutUS__team_list_img{
                 max-width: 180px;
                 min-width: 180px;
@@ -324,6 +311,18 @@
                 padding-right: 25px;
 
                 .contacts__list_item{
+                    &:nth-of-type(1) .contacts__list_item_link{    
+                        background-image: url('../img/aboutUS/skype.svg');
+                    }
+                
+                    &:nth-of-type(2) .contacts__list_item_link{
+                        background-image: url('../img/aboutUS/viber.svg');
+                    }
+                
+                    &:nth-of-type(3) .contacts__list_item_link{
+                        background-image: url('../img/aboutUS/telegram.svg');
+                    }
+
                     .contacts__list_item_link{
                         display: block;
                         width: 20px;
