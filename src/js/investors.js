@@ -16,7 +16,7 @@ $('.progressBar__list_item').hover(
     }
 );
 
-$('.progressBar__list_item').each(function(){
+$('.progressBar__list_item').each(function () {
 
 });
 
