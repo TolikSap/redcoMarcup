@@ -653,8 +653,96 @@
                     border: 20px solid transparent; border-bottom: 20px solid #fff;
                 }
             }
+        }
+    }
+}
 
+.news__list_item{
+    .news__list_item_author{
+        display: block;
+        margin-bottom: 16px;
 
+        .news__list_item_author-img{
+            max-width: 40px;
+            min-width: 40px;
+            max-height: 40px;
+            min-height: 40px;
+            margin-right: 10px;
+            float: left;
+        }
+
+        .news__list_item_author_name{
+            font-size: 16px;
+            line-height: 22px;
+            color: #25282B;
+            font-family: OpenSans, sans-serif;
+            display: block;
+        }
+
+        .news__list_item_author_date{
+            color: #25282B;
+            font-size: 12px;
+            line-height: 16px;
+            font-family: OpenSans, sans-serif;
+        }
+    }
+
+    .news__list_item_info{
+        display: flex;
+        margin-bottom: 15px;
+
+        .rating{
+            background-image: url('../img/blog/rating.svg');
+            width: 108px;
+            height: 16px;
+            margin-right: auto;
+        }
+
+        .bookmark{
+            display: flex;
+            margin-right: 10.5px;
+            font-size: 12px;
+            line-height: 16px;
+            color: #6A6A6A;
+            font-family: OpenSans, sans-serif;
+
+            &::before{
+                content: url('../img/index/like.svg');
+                margin-right: 5px;
+                width: 13.5px;
+                height: 12px;
+            }
+        }
+
+        .comment{
+            display: flex;
+            font-size: 12px;
+            line-height: 16px;
+            color: #6A6A6A;
+            font-family: OpenSans, sans-serif;
+
+            &::before{
+                content: url('../img/index/comment.svg');
+                margin-right: 5px;
+                width: 13.5px;
+                height: 12px;
+            }
+        }
+    }
+
+    .news__list_item_footer{
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        line-height: 16px;
+        color: #25282B;
+        font-family: OpenSans, sans-serif;
+
+        a, .news__list_item_footer_link{
+            color: #25282B;
+            &:visited{
+                color: #25282B;
+            }
         }
     }
 }

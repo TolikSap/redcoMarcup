@@ -1077,20 +1077,16 @@
                 padding-right: 15px;
     
                 &::before{
-                    left: 0px;
-                    top: 20px;
-                }
-
-                .faq__list_item_title{
-                    margin-bottom: 10px;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
                 }
 
                 &.active{
                     &::before{
-                        position: absolute;
-                        left: 10px;
-                        top: 25px;
-                        content: url('../img/index/minus.svg');
+                        left: 0;
+                        top: 30px;
+                        content: '-';
                         width: 13px;
                         height: 13px;
                     }
@@ -1114,133 +1110,47 @@
     }
 }
 
-.news__list_item{
-    width: 32%;
-    max-width: 370px;
-    background: #FFFFFF;
-    border-radius: 12px;
-    transition: all 0.3s ease-in-out;
-
-    &:hover{
-        cursor: pointer;
-        filter: drop-shadow(0 3px 10px #fff);
-    }
-
-    &:not(:last-of-type){
-        margin-right: 30px;
-    }
+.main-page{
+    .news__list_item{
+        width: 32%;
+        max-width: 370px;
+        background: #FFFFFF;
+        border-radius: 12px;
+        transition: all 0.3s ease-in-out;
     
-    .news__list_item_img{
-        border-radius: 10px 10px 0px 0px;
-    }
-
-    .news__list_item_title{
-        font-size: 18px;
-        line-height: 25px;
-        color: #fff;
-        font-family: OpenSansBold, sans-serif;
-        position: relative;
-        top: -50px;
-        text-align: center;
-    }
-
-    .news__list_item_wrapper{
-        padding: 0 20px 20px;
-    }
-
-    .news__list_item_descr{
-        font-size: 16px;
-        line-height: 22px;
-        font-family: OpenSans, sans-serif;
-        color: #000000;
-        margin-bottom: 15px;
-    }
-
-    .news__list_item_author{
-        display: block;
-        margin-bottom: 16px;
-
-        .news__list_item_author-img{
-            max-width: 40px;
-            min-width: 40px;
-            max-height: 40px;
-            min-height: 40px;
-            margin-right: 10px;
-            float: left;
+        &:hover{
+            cursor: pointer;
+            filter: drop-shadow(0 3px 10px #fff);
         }
-
-        .news__list_item_author_name{
+    
+        &:not(:last-of-type){
+            margin-right: 30px;
+        }
+        
+        .news__list_item_img{
+            border-radius: 10px 10px 0px 0px;
+        }
+    
+        .news__list_item_title{
+            font-size: 18px;
+            line-height: 25px;
+            color: #fff;
+            font-family: OpenSansBold, sans-serif;
+            position: relative;
+            top: -50px;
+            text-align: center;
+        }
+    
+        .news__list_item_wrapper{
+            padding: 0 20px 20px;
+        }
+    
+        .news__list_item_descr{
             font-size: 16px;
             line-height: 22px;
-            color: #25282B;
             font-family: OpenSans, sans-serif;
-            display: block;
-        }
-
-        .news__list_item_author_date{
-            color: #25282B;
-            font-size: 12px;
-            line-height: 16px;
-            font-family: OpenSans, sans-serif;
-        }
-    }
-
-    .news__list_item_info{
-        display: flex;
-        margin-bottom: 15px;
-
-        .rating{
-            background-image: url('../img/index/rating.jpg');
-            width: 108px;
-            height: 16px;
-            margin-right: auto;
-        }
-
-        .bookmark{
-            display: flex;
-            margin-right: 10.5px;
-            font-size: 12px;
-            line-height: 16px;
-            color: #6A6A6A;
-            font-family: OpenSans, sans-serif;
-
-            &::before{
-                content: url('../img/index/like.svg');
-                margin-right: 5px;
-                width: 13.5px;
-                height: 12px;
-            }
-        }
-
-        .comment{
-            display: flex;
-            font-size: 12px;
-            line-height: 16px;
-            color: #6A6A6A;
-            font-family: OpenSans, sans-serif;
-
-            &::before{
-                content: url('../img/index/comment.svg');
-                margin-right: 5px;
-                width: 13.5px;
-                height: 12px;
-            }
-        }
-    }
-
-    .news__list_item_footer{
-        display: flex;
-        justify-content: space-between;
-        font-size: 12px;
-        line-height: 16px;
-        color: #25282B;
-        font-family: OpenSans, sans-serif;
-
-        a, .news__list_item_footer_link{
-            color: #25282B;
-            &:visited{
-                color: #25282B;
-            }
+            color: #000000;
+            margin-bottom: 15px;
         }
     }
 }
