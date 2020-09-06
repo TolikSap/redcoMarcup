@@ -13,15 +13,32 @@
         display: flex;
         justify-content: center;
         margin-bottom: 5px;
+        flex-direction: column;
+
+        @include tablet{
+            flex-direction: row;
+        }
 
         .footer__list_item{
-            width: 24%;
+            width: 100%;
             padding-right: 20px;
             padding-left: 20px;
+            padding-top: 25px;
+            padding-bottom: 25px;
 
-            &:not(:first-child),
-            &:not(:last-child){
-                border-right: 2px dotted #909090;
+            &:not(:last-of-type){
+                border-bottom: 2px dotted #909090;
+            }
+
+            @include tablet{
+                padding-top: 0;
+                padding-bottom: 0;
+
+                &:not(:first-child),
+                &:not(:last-child){
+                    border-right: 2px dotted #909090;
+                    border-bottom: 0;
+                }
             }
 
             .footer__descr{
@@ -29,8 +46,25 @@
                 line-height: 22px;
                 color: #C8C5C5;
                 font-family: OpenSans, sans-serif;
-                margin-bottom: 50px;
+                margin-bottom: 23px;
                 display: block;
+                text-align: center;
+
+                @include tablet{
+                    font-size: 16px;
+                    line-height: 22px;
+                    margin-bottom: 50px;
+                    text-align-last: left;
+                }
+            }
+
+            .contacts__widget{
+                align-items: center;
+                margin-bottom: 23px;
+
+                @include tablet{
+                    align-items: flex-start;
+                }
             }
 
             .footer__nav,
@@ -64,5 +98,10 @@
         margin-top: 10px;
         color: #6A6A6A;
         font-family: OpenSans, sans-serif;
+        text-align: center;
+        
+        @include tablet{
+            text-align: left;
+        }
     }
 }

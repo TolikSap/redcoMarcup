@@ -331,6 +331,8 @@
             margin-bottom: 30px;
 
             .blog__content_news{
+                margin-bottom: 0;
+                
                 &:hover{
                     .news__descr{
                         bottom: 0px;

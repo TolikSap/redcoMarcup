@@ -5,9 +5,10 @@ const stickyHeader = () =>{
             checkHeaderPosition();
         };
 
-        const header = document.getElementById("header");
+        const body = document.body;
+        let lastScroll = 0;
         let sticky = header.offsetTop;
-
+        
         function checkHeaderPosition (){
             if (window.pageYOffset > sticky){
                 header.classList.add("sticky");
@@ -16,22 +17,13 @@ const stickyHeader = () =>{
             }
         };
 
-        const body = document.body;
-        let lastScroll = 0;
-        
         window.addEventListener("scroll", () => {
             const currentScroll = window.pageYOffset;
 
-            if (currentScroll == 0) {
+            if (currentScroll == 0 || currentScroll < 0) {
               body.classList.remove("scroll-up");
               body.classList.add("default-state");
               return;
-            }
-
-            if (currentScroll > 850){
-                body.classList.add("scrolled-view"); 
-            } else {
-                body.classList.remove("scrolled-view");
             }
             
             if (currentScroll > lastScroll && !body.classList.contains("scroll-down")) {
