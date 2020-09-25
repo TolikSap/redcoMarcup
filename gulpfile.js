@@ -87,5 +87,5 @@ gulp.task('reload', () => {
 gulp.task('watch', ['reload','sass', 'html','js'], () => {
   gulp.watch(['src/**/*.scss'], ['sass'], browserSync.reload);
   gulp.watch(['src/pages/**/*.html'], ['html']);
-  gulp.watch(['src/pages/*.js'], ['js'])
+  gulp.watch(['src/js/*.js'], ['js'])
 });
