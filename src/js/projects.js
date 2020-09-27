@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (event) {
+        // const mapGeorgia = document.getElementById('map__img');
         // mapCheckpoint variables
         const mapCheckpointBatumi = document.getElementById('mapPoint__Batumi');
         const mapCheckpointKutaisi = document.getElementById('mapPoint__Kutaisi');
@@ -58,22 +59,3 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 });
 
-document.addEventListener("DOMContentLoaded", function (event) {
-
-  
-    // const filterBtnAll = document.getElementById('filtersBtn_all');
-    // const filtersBtnFinished = document.getElementById('filtersBtn_finished');
-    // const filtersBtnNew = document.getElementById('filtersBtn_new');
-    // const filtersBtnSold = document.getElementById('filtersBtn_sold');
-    
-    // filterBtnAll.addEventListener('onclick', filterSelection('all'));
-    // filtersBtnFinished.addEventListener('onclick', filterSelection('sold'));
-    // filtersBtnNew.addEventListener('onclick', filterSelection('new'));
-    // filtersBtnSold.addEventListener('onclick', filterSelection('sold'));
-    
-});
-
-
-
-
-console.log('work')

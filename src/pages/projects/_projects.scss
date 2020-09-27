@@ -13,59 +13,110 @@
         .map__wrapper{
             display: flex;
             position: relative;
-            margin-bottom: 80px;
+            margin-bottom: 50px;
+            flex-direction: column;
 
-            .map__img{
-                min-width: 780px;
-                min-height: 420px;
+            @include laptop{
+                margin-bottom: 80px;
+                flex-direction: row;
             }
+        }
 
-            .map__descr_item{
+        .map__descr{
+            margin-bottom: 55px;
+
+            @include laptop{
+                margin-bottom: 0;
+            }
+        }
+
+        .map__descr_item{
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            opacity: 0;
+            position: absolute;
+            transition: opacity 3s ease;
+            align-items: center;
+
+            @include laptop{
+                align-items: flex-start;
                 margin-right: 40px;
-                height: 100%;
-                display: none;
-                flex-direction: column;
-                opacity: 0;
-                position: absolute;
-                transition: opacity 3s ease;
-
-                &.active{
-                    display: flex;
-                    position: relative;
-                    top: 0;
-                    left: 0;
-                    opacity: 1
-                }
             }
 
-            .map__descr_item_title{
-                font-size: 20px;
-                line-height: 27px;
-                color: #ffffff;
-                font-family: OpenSansBold, sans-serif;
-                margin-bottom: 15px;
+            &.active{
+                display: flex;
+                position: relative;
+                top: 0;
+                left: 0;
+                opacity: 1
             }
+        }
 
-            .map__descr_item_text{
+        .map__descr_item_title{
+            font-size: 20px;
+            line-height: 27px;
+            color: #ffffff;
+            font-family: OpenSansBold, sans-serif;
+            margin-bottom: 15px;
+        }
+
+        .map__descr_item_text{
+            font-size: 14px;
+            line-height: 19px;
+            color: #ffffff;
+            font-family: OpenSans, sans-serif;
+            text-align: center;
+            margin-bottom: 20px;
+
+            @include tablet{
                 font-size: 16px;
                 line-height: 22px;
-                color: #ffffff;
-                font-family: OpenSans, sans-serif;
             }
 
-            .map__descr_item_btn{
-                display: flex;
-                align-items: center;
-                justify-content: center;
+            @include laptop{
+                text-align: left;
+                margin-bottom: 0;
+            }
+        }
+
+        .map__descr_item_btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-self: center;
+            margin-top: auto;
+            padding: 10px 24px;
+            background-color: #BA0C2F;
+            border-radius: 30px;
+            font-size: 15px;
+            line-height: 20px;
+            color: #ffffff;
+            font-family: OpenSans, sans-serif;
+
+            @include laptop{
                 align-self: flex-start;
-                margin-top: auto;
-                padding: 10px 24px;
-                background-color: #BA0C2F;
-                border-radius: 30px;
-                font-size: 15px;
-                line-height: 20px;
-                color: #ffffff;
-                font-family: OpenSans, sans-serif;
+            }
+        }
+
+        .map__img{
+            min-width: 290px;
+            max-width: 100%;
+            min-height: 156px;
+            max-height: 200px;
+            margin: 0 auto;
+            width: auto;
+
+            @include untilTablet{
+                max-height: initial;
+            }
+
+            @include tablet{
+                max-height: 420px;
+            }
+
+            @include laptop{
+                min-width: 780px;
             }
         }
     }
@@ -77,25 +128,55 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #F5F5F5;
             border-radius: 20px;
-            padding-left: 5px;
             min-height: 40px;
             margin-bottom: 40px;
+            flex-direction: column;
+
+            @include tablet{
+                flex-direction: row;
+                padding-left: 5px;
+                background-color: #F5F5F5;
+            }
+        }
+
+        .filters__main{
+            background-color: #F5F5F5;
+            border-radius: 20px;
+            width: 100%;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            @include tablet{
+                border-radius: initial;
+                margin-bottom: 0;
+            }
         }
 
         .filters__main_btn{
-            padding-left: 12px;
-            padding-right: 12px;
             padding-top: 5px;
             padding-bottom: 5px;
-            font-size: 15px;
-            line-height: 20px;
+            font-size: 13px;
+            line-height: 18px;
             font-family: OpenSans, sans-serif;
             border: 0;
             appearance: none;
             outline: none;
             transition: all 0.3s ease-in-out;
+            border-radius: 20px;
+            background-color: #F5F5F5;
+            width: 49%;
+            
+
+            @include tablet{
+                padding-left: 12px;
+                padding-right: 12px;
+                font-size: 15px;
+                line-height: 20px;
+                width: initial;
+            }
 
             &:hover{
                 background: #414141;
@@ -111,9 +192,13 @@
             height: 100%;
             min-height: 40px;
             display: flex;
-            position: relative;
-            right: -1px;
-            
+            width: 100%;
+
+            @include tablet{
+                width: initial;
+                position: relative;
+                right: -1px;
+            }
         }
 
         .dropdown{
@@ -123,6 +208,11 @@
             padding-left: 15px;
             padding-right: 38px;
             position: relative;
+            width: 50%;
+
+            @include tablet{
+                width: initial;
+            }
 
             &::after{
                 content: '';
@@ -207,17 +297,22 @@
             justify-content: space-between;
 
             &__item{
-                width: calc(50% - 15px);
+                width: 100%;
                 margin-bottom: 30px;
                 font-family: OpenSans, sans-serif;
                 color: #fff;
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
-                min-height: 350px;
+                min-height: 500px;
                 border-radius: 20px;
                 display: none;
                 overflow: hidden;
+
+                @include tablet{
+                    width: calc(50% - 15px);
+                    min-height: 350px;
+                }
 
                 &:nth-of-type(1){
                     background-image: url('../img/projects/projects__img-1.jpg');
@@ -242,7 +337,18 @@
                     }
 
                     .projectsList__item_info::before{
-                        background-image: url('../img/icons/arrow__bottom.svg');
+                        background-image: url('../img/icons/arrow__top_white.svg');
+                    }
+                }
+
+                &:focus{
+                    .projectsList__item_info::before{
+                        background-image: url('../img/icons/arrow__top_white.svg');
+                        
+
+                        @include tablet{
+                            background-image: url('../img/icons/arrow__bottom.svg');
+                        }
                     }
                 }
             }
@@ -258,10 +364,13 @@
             }
 
             .projectsList__item_info_row{
-                position: absolute;
-                transition: all 0.6s ease-in-out;
-                transform: translateY(100%);
                 margin-top: 15px;
+
+                @include tablet{
+                    position: absolute;
+                    transition: all 0.6s ease-in-out;
+                    transform: translateY(100%);
+                }
             }
 
             .projectsList__item_info{
@@ -269,29 +378,33 @@
                 background: rgba(200, 197, 197, 0.26);
                 backdrop-filter: blur(18px);
                 border-radius: 15px;
-                padding-left: 40px;
-                padding-right: 40px;
-                padding-top: 30px;
-                padding-bottom: 25px;
+                padding: 15px 15px 20px;
                 display: flex;
                 flex-wrap: wrap;
                 flex-direction: row;
                 justify-content: space-between;
                 position: relative;
 
-                &::before{
-                    content: '';
-                    display: block;
-                    width: 20px;
-                    height: 12px;
-                    background-image: url('../img/icons/arrow__top_white.svg');
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    position: absolute;
-                    top: 10px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    transition: all 0.3s ease-in-out;
+                @include tablet{
+                    padding-left: 40px;
+                    padding-right: 40px;
+                    padding-top: 30px;
+                    padding-bottom: 25px;
+
+                    &::before{
+                        content: '';
+                        display: block;
+                        width: 20px;
+                        height: 12px;
+                        background-image: url('../img/icons/arrow__top_white.svg');
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        position: absolute;
+                        bottom: 5px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        transition: all 0.3s ease-in-out;
+                    }
                 }
 
                 .projectsList__item_info_column{
@@ -305,9 +418,14 @@
 
             .projectsList__item_info_title{
                 font-weight: 700;
-                font-size: 20px;
-                line-height: 27px;
+                font-size: 18px;
+                line-height: 25px;
                 color: #fff;
+
+                @include tablet{
+                    font-size: 18px;
+                    line-height: 25px;
+                }
             }
 
             .projectsList__item_info_position{
@@ -326,27 +444,42 @@
             .projectsList__item_info_num{
                 text-align: right;
                 color: #BA0C2F;
-                font-size: 25px;
-                line-height: 30px;
+                font-size: 20px;
+                line-height: 24px;
                 font-family: Montserrat-Bold, sans-serif;
+                
+                @include tablet{
+                    font-size: 25px;
+                    line-height: 30px;
+                }
             }
 
             .projectsList__item_info_text{
-                font-size: 16px;
-                line-height: 22px;
+                font-size: 14px;
+                line-height: 19px;
                 color: #fff;
                 margin-bottom: 15px;
+                
+                @include tablet{
+                    font-size: 16px;
+                    line-height: 22px;
+                }
             }
 
             .projectsList__characteristicList{
                 display: flex;
 
                 &_item{
-                    font-size: 16px;
-                    line-height: 22px;
+                    font-size: 14px;
+                    line-height: 19px;
                     color: #fff;
                     display: flex;
                     align-items: center;
+
+                    @include tablet{
+                        font-size: 16px;
+                        line-height: 22px;
+                    }
 
                     &:not(:last-of-type){
                         margin-right: 10px;
