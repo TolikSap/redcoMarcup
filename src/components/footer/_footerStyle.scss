@@ -5,9 +5,16 @@
 .footer{
     background-color: #070707;
     color: #C8C5C5;
+    font-family: OpenSans, sans-serif;
 
     .footer__logo_link{
         margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+
+        @include tablet{
+            justify-content: flex-start;
+        }
     }
 
     .footer__list{
@@ -24,11 +31,14 @@
             width: 100%;
             padding-right: 20px;
             padding-left: 20px;
-            padding-top: 25px;
             padding-bottom: 25px;
 
             &:not(:last-of-type){
                 border-bottom: 2px dotted #909090;
+            }
+
+            &:not(:first-of-type){
+                padding-top: 25px;
             }
 
             @include tablet{
@@ -43,10 +53,10 @@
             }
 
             .footer__descr{
-                font-size: 16px;
-                line-height: 22px;
+                font-size: 14px;
+                line-height: 19px;
                 color: #C8C5C5;
-                font-family: OpenSans, sans-serif;
+                
                 margin-bottom: 23px;
                 display: block;
                 text-align: center;
@@ -77,8 +87,14 @@
 
                 &_item{
                     &:not(:last-child){
-                        margin-bottom: 20px;
+                        margin-bottom: 15px;
+
+                        @include tablet{
+                            margin-bottom: 20px;
+                        }
                     }
+
+                    
                 }
             }
 
@@ -98,7 +114,6 @@
         line-height: 19px;
         margin-top: 10px;
         color: #6A6A6A;
-        font-family: OpenSans, sans-serif;
         text-align: center;
         
         @include tablet{

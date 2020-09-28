@@ -460,10 +460,6 @@
   .projects {
     background: #25282b;
 
-    &__title {
-      margin-bottom: 40px;
-    }
-
     .container {
       padding-bottom: 0;
     }
@@ -590,7 +586,6 @@
     }
 
     &__title {
-      margin-bottom: 40px;
       grid-area: header;
     }
 
@@ -1076,14 +1071,6 @@
       padding-bottom: 0px;
     }
 
-    &__title {
-      margin-bottom: 33px;
-
-      @include tablet {
-        margin-bottom: 40px;
-      }
-    }
-
     .map__info {
       display: flex;
       margin-bottom: 50px;
@@ -1479,10 +1466,6 @@
 
   .news {
     background-color: #25282b;
-
-    &__title {
-      margin-bottom: 40px;
-    }
 
     .news__list {
       display: flex;

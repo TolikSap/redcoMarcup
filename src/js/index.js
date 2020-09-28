@@ -31,12 +31,7 @@ tbilisi.addEventListener('click touchstart', function(event){
     mapInfoMziuri.classList.toggle('active');
 })
 
-$(document).on('touchstart', function() {
-    documentClick = true;
-});
-$(document).on('touchmove', function() {
-    documentClick = false;
-});
+
 $('#tbilisi').on('click touchend', function(event) {
     if (event.type == "click") documentClick = true;
     if (documentClick){
@@ -68,50 +63,3 @@ let mySwiper = new Swiper('.reviews__list', {
     },     
 });
 
-const headerContainer = document.getElementById('header__container'),
-      headerMenuBtnClose = document.getElementById('header__menu_mob-btn'),
-      headerNav = document.getElementById('header__nav'),
-      headerLogo = document.getElementById('header__logo'),
-      headerMenuBtnWrap = document.getElementById('header__menu_mob');
-
-
-const initializeHeaderMobileMenu = () =>{
-    document.addEventListener("DOMContentLoaded", function (event) {
-
-        headerMenuBtnClose.addEventListener('click', function (ev) {
-            ev.preventDefault();
-    
-            if (headerNav.classList.contains('active')) {
-                headerNav.classList.remove('active');
-            } else {
-                headerNav.classList.add('active');
-            };
-    
-            if (headerMenuBtnWrap.classList.contains('active')) {
-                headerMenuBtnWrap.classList.remove('active');
-            } else {
-                headerMenuBtnWrap.classList.add('active');
-            };
-    
-            if (headerMenuBtnClose.classList.contains('active')) {
-                headerMenuBtnClose.classList.remove('active');
-            } else {
-                headerMenuBtnClose.classList.add('active');
-            };
-    
-            if (headerLogo.classList.contains('active')) {
-                headerLogo.classList.remove('active');
-            } else {
-                headerLogo.classList.add('active');
-            }
-    
-            if (headerContainer.classList.contains('active')) {
-                headerContainer.classList.remove('active');
-            } else {
-                headerContainer.classList.add('active');
-            }
-        });
-    });
-};
-
-initializeHeaderMobileMenu();
