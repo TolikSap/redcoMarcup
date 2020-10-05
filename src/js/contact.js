@@ -60,7 +60,8 @@ btnUkraine.addEventListener("click", function(){
     $(this).addClass('active');
     $('.contacts__info_item.active').removeClass('active');
     $('.contacts__info_item.Ukraine').addClass('active');
-    $('.contacts__intro').css("background-image", "url('https://toliksap.github.io/redcoMarcup/dist/img/contacts/Ukraine__bg.jpg')");
+    $('.contacts__intro').removeClass('Georgia', 'russia');
+    $('.contacts__intro').addClass('Ukraine');
 });
 
 btnGeorgia.addEventListener("click", function(){
@@ -70,7 +71,8 @@ btnGeorgia.addEventListener("click", function(){
     $(this).addClass('active');
     $('.contacts__info_item.active').removeClass('active');
     $('.contacts__info_item.Georgia').addClass('active');
-    $('.contacts__intro').css("background-image",  "url('https://toliksap.github.io/redcoMarcup/dist/img/contacts/contacts__bg.png')");
+    $('.contacts__intro').removeClass('Ukraine', 'russia');
+    $('.contacts__intro').addClass('Georgia');
 });
 
 btnRussia.addEventListener("click", function(){
@@ -80,6 +82,8 @@ btnRussia.addEventListener("click", function(){
     $(this).addClass('active');
     $('.contacts__info_item.active').removeClass('active');
     $('.contacts__info_item.Russia').addClass('active');
+    $('.contacts__intro').removeClass('Ukraine', 'Georgia');
+    $('.contacts__intro').addClass('russia');
 })
 
 jQuery(document).ready(function() {

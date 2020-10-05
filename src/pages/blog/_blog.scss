@@ -10,6 +10,10 @@
     .container{
         padding-top: 0;
         padding-bottom: 80px;
+
+        @include laptop{
+            padding-bottom: 40px;
+        }
     }
 
     .blog__filter_wrapper{
@@ -237,22 +241,19 @@
     }
 
     .projects__banner{
-        position: absolute;
-        top: 120px;
-        right: -30px;
-        transform: translateX(100%);
-        background: #F5F5F5;
-        border-radius: 20px;
-        max-width: 260px;
-        padding: 20px;
+        position: relative;
+        max-width: 100%;
+        margin-top: 20px;
 
-        @media screen and (max-width: 1800px){
-            position: relative;
-            transform: translateX(0);
-            top: initial;
-            right: initial;
-            max-width: 100%;
-            margin-top: 20px;
+        @media screen and (min-width: 1800px){
+            position: absolute;
+            top: 120px;
+            right: -30px;
+            transform: translateX(100%);
+            background: #F5F5F5;
+            border-radius: 20px;
+            max-width: 260px;
+            padding: 20px;
         }
     }
 
@@ -260,9 +261,13 @@
         display: flex;
         flex-direction: column;
 
-        @media screen and (max-width: 1800px){
+        @include tablet{
             flex-direction: row;
             justify-content: space-between;
+        }
+
+        @media screen and (min-width: 1800px){
+            flex-direction: column;
         }
     }
 
@@ -270,12 +275,18 @@
         margin-bottom: 20px;
         position: relative;
         transition: all 0.3s ease-in-out;
-        max-width: 220px;
-        max-height: 200px;
+        width: 100%;
+        max-width: 320px;
+        margin-right: auto;
+        margin-left: auto;
 
-        @media screen and (max-width: 1800px){
-            max-width: 33%;
+        @include tablet{
             max-height: 320px;
+            max-width: 32%;
+        }
+
+        @media screen and (min-width: 1800px){
+            max-width: 100%;
         }
 
         &:hover{
@@ -345,10 +356,10 @@
         align-items: center;
 
         @include tablet{
-            justify-content: space-between;
+            justify-content: space-around;
         }
 
-        @include desktop{
+        @include laptop{
             display: grid;
             flex-direction: row;
             grid-template-columns: repeat(auto-fill, 270px);
@@ -358,7 +369,9 @@
     }
 
     .blog__content_list.main__news{
-        @include desktop{
+        margin-bottom: 20px;
+
+        @include laptop{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 190px 190px;
@@ -371,11 +384,16 @@
         }
 
         .blog__content_news{
-            margin-bottom: 0;
+            margin-bottom: 20px;
 
-            @include desktop{
+            @include tablet{
+                max-width: 49%;
+            }
+
+            @include laptop{
                 min-height: 190px;
                 max-width: initial;
+                margin-bottom: 0;
 
                 &:nth-child(1){
                     grid-column: 1/2;
@@ -411,17 +429,21 @@
                 font-size: 20px;
                 line-height: 27px;
                 margin-top: 0;
-                position: absolute;
-                top: 50%;
-                left: 20px;
-                transform: translateY(-50%);
+                
+
+                @include laptop{
+                    position: absolute;
+                    top: 50%;
+                    left: 20px;
+                    transform: translateY(-50%);
+                }
             }
         }
     }
 
     .blog__content_news{
         position: relative;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         max-width: 290px;
         width: 100%;
         min-height: 320px;
@@ -429,8 +451,10 @@
         flex-direction: column;
         justify-content: flex-end;
 
-        @include desktop{
+        @include laptop{
             min-height: 260px;
+            max-width: 270px;
+            margin-bottom: 30px;
         }
 
         &:hover{
@@ -453,7 +477,7 @@
             height: 100%;
             object-fit: cover;
 
-            @include desktop{
+            @include laptop{
                 position: relative;
                 width: auto;
                 height: auto;
@@ -469,7 +493,7 @@
         z-index: 4;
         text-shadow: 0px 0px 15px #131313;
 
-        @include desktop{
+        @include laptop{
             margin-top: 20px;
             text-align: left;
         }
@@ -487,7 +511,7 @@
         border-radius: 7px;
         z-index: 4;
 
-        @include desktop{
+        @include laptop{
             transition: all 0.3s ease;
             position: absolute;
             z-index: -1;
@@ -544,8 +568,10 @@
     margin-top: 50px;
     margin-bottom: 80px;
     position: relative;
-    padding-top: 90px;
-    padding-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
     width: 100vw;
     margin-left: calc(50% - 50vw);
     background-image: url('../img/blog/blog__feedbackForm.png');
@@ -554,10 +580,21 @@
     background-size: cover;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @include laptop{
+        flex-direction: row;
+        padding-top: 90px;
+        padding-bottom: 40px;
+    }
 
     .blog__feedbackForm_title{
         color: #000000;
-        margin-right: 150px;
+
+        @include laptop{
+            margin-right: 150px;
+        }
     }
 
     .blog__feedbackForm_wrapper{

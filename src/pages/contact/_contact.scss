@@ -16,6 +16,18 @@
         padding-bottom: 55px;
         transition: all 0.5s ease-in;
 
+        &.Georgia{
+            background-image: url('../img/contacts/contacts__ge.jpg');
+        }
+
+        &.Ukraine{
+            background-image: url('../img/contacts/contacts__ua.jpg');
+        }
+
+        &.russia{
+            background-image: url('../img/contacts/contacts__ru.jpg');
+        }
+
         .container{
             background-color: transparent;
         }
