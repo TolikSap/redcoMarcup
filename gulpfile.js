@@ -18,12 +18,13 @@ gulp.task('sass', () => {
     'src/components/**/*.scss',
     'src/pages/**/*.scss',
   ])
-  .pipe(plumber())
   .pipe(maps.init())
+  .pipe(plumber())
 	.pipe(sass()) // для препроцессора css - sass 
 	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // для кроссбраузерности
 	.pipe(csso()) // минификация css
-	.pipe(rename({suffix:'.min', dirname: ''})) // для переименования конечных файлов css и для изменения конечной структуры проекта
+  .pipe(rename({suffix:'.min', dirname: ''})) // для переименования конечных файлов css и для изменения конечной структуры проекта
+  .pipe(maps.write())
   .pipe(gulp.dest('dist/css/')) // сборка проекта с указанием конечной директории
   .pipe(browserSync.reload({
 		stream: true})); // отслеживание ошибок в режиме стрима
