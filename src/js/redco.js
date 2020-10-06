@@ -168,7 +168,10 @@
                         });
                     });
                     counter = 1;
-                }
+                    }
+                    else{
+                        return;
+                    }
                 }
 
                 window.onscroll = e => {
@@ -178,6 +181,23 @@
         });
     };
     animationCounter();
+
+    const btn404BackFunction = () => {
+        document.addEventListener("DOMContentLoaded", function (event) {
+            const btnBack = document.getElementById('pageNotFound__nav_btn-back');
+
+            if (typeof (btnBack) != 'undefined' && btnBack != null) {
+                event.preventDefault();
+                btnBack.addEventListener('click', function(){
+                    window.history.back();
+                });
+            }
+            else{
+                return;
+            }
+        });
+    }
+    btn404BackFunction();
 })();
 
 

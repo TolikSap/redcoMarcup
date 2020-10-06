@@ -1,555 +1,165 @@
 <!DOCTYPE html>
 <html lang="nl">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="title" content="REDCO">
-		<title>REDCO</title>
-		<link rel="stylesheet" href="css/main.min.css">
-		<script></script>
-		<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="title" content="REDCO">
+	<title>REDCO</title>
+	<link rel="stylesheet" href="css/main.min.css">
+	<script></script>
+	<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
 
-	<body class="blog">
-		<main class="main" id="main">
-			@@include('../components/header/header.html')
+<body class="article__page">
+	<main class="main" id="main">
+		@@include('../components/header/header.html')
 
-			<div class="breadcrumb__list_wrapper">
-				<ul class="breadcrumb__list">
-					<li class="breadcrumb__list_item">
-						<a href="" class="breadcrumb__list_item-link">Главная</a>
-					</li>
-					<li class="breadcrumb__list_item active">
-						<a href="" class="breadcrumb__list_item-link ">О нас</a>
-					</li>
-				</ul>
+		<div class="breadcrumb__list_wrapper">
+			<ul class="breadcrumb__list">
+				<li class="breadcrumb__list_item">
+					<a href="index.html" class="breadcrumb__list_item-link">Главная</a>
+				</li>
+				<li class="breadcrumb__list_item">
+					<a href="" class="breadcrumb__list_item-link ">Блог</a>
+				</li>
+				<li class="breadcrumb__list_item active">
+					<a href="" class="breadcrumb__list_item-link ">Статья</a>
+				</li>
+			</ul>
+		</div>
+
+		<div id="scroll-bar"></div>
+
+		<section class="intro">
+			<div class="container">
+				<h1 class="into__title page__title">ТРЕНДЫ 2020: КРАШЕНЫЙ ПОЛ</h1>
+				<div class="intro__author">
+					<div class="news__list_item_author intro__author_description">
+						<img src="img/index/user__img.jpg" alt="" class="news__list_item_author-img">
+
+						<span class="news__list_item_author_name">Ярослав Иванов</span>
+						<span class="news__list_item_author_date">28.02.2020</span>
+					</div>
+
+					<div class="intro__stats">
+						<div class="intro__stats_comments">8</div>
+						<p class="intro__stats_timeToRead">Время прочтения 8 м.</p>
+					</div>
+				</div>
+				<img src="img/article/intro__img.jpg" alt="article__image" class="intro__img">
 			</div>
-
-			<section class="blog__filter">
-				<div class="container">
-					<div class="blog__filter_wrapper">
-						<div class="blog__filter_categories">
-							<p class="blog__filter_categories_button">Категории</p>
-							<ul class="blog__filter_categories_list">
-								<li class="blog__filter_categories_list_item">
-									<a href="#" class="blog__filter_categories_list_item-link active">Апартаменты</a>
-								</li>
-								<li class="blog__filter_categories_list_item">
-									<a href="#" class="blog__filter_categories_list_item-link">Квартиры</a>
-								</li>
-								<li class="blog__filter_categories_list_item">
-									<a href="#" class="blog__filter_categories_list_item-link">Коммерческая недвижимость</a>
-								</li>
-							</ul>
-						</div>
-
-						<ul class="blog__filter_list">
-							<li class="blog__filter_list_item active">
-								<a href="#" class="blog__filter_list_item-link">Рейтинг</a>
-							</li>
-							<li class="blog__filter_list_item">
-								<a href="#" class="blog__filter_list_item-link">Дата</a>
-							</li>
-							<li class="blog__filter_list_item">
-								<a href="#" class="blog__filter_list_item-link">Комментарии</a>
-							</li>
-						</ul>
-
-						<div class="blog__filter_search">
-							<form action="POST" class="blog__filter_search_form">
-								<input type="text" class="blog__filter_search_form_input" placeholder="Поиск по новостям">
-								<input type="submit" value="submit" class="blog__filter_search-btn">
-							</form>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="blog__wrapper">
-				<div class="container">
-					<h2 class="blog__wrapper_title section__title">БЛОГ</h2>
-
-					<div class="blog__content">
-						<ul class="blog__content_list main__news">
-							<li class="blog__content_news news__list_item">
-								<img src="img/blog/blog__news1.png" alt="blog_news" class="blog__content_news_img">
-
-								<p class="blog__content_news_title">САМАЯ ПОПУЛЯРНАЯ СТАТЬЯ</p>
-
-								<div class="news__descr">
-									<div class="news__list_item_author">
-										<img src="img/index/user__img.jpg" alt="" class="news__list_item_author-img">
-
-										<span class="news__list_item_author_name">Ярослав Иванов</span>
-										<span class="news__list_item_author_date">28.02.2020</span>
-									</div>
-
-									<div class="news__list_item_info">
-										<div class="rating"></div>
-
-										<div class="bookmark">25</div>
-										<div class="comment">8</div>
-									</div>
-
-									<div class="news__list_item_footer">
-										<p class="news__list_item_footer-time">Время прочтения 8 м.</p>
-
-										<a href="" class="news__list_item_footer_link">Читать далее >
-										</a>
-									</div>
-								</div>
-							</li>
-							<li class="blog__content_news news__list_item">
-								<img src="img/blog/blog__news2.png" alt="blog_news" class="blog__content_news_img">
-
-								<p class="blog__content_news_title">МЕНЕЕ ПОПУЛЯРНАЯ</p>
-
-								<div class="news__descr">
-									<div class="news__list_item_author">
-										<img src="img/index/user__img.jpg" alt="" class="news__list_item_author-img">
-
-										<span class="news__list_item_author_name">Ярослав Иванов</span>
-										<span class="news__list_item_author_date">28.02.2020</span>
-									</div>
-
-									<div class="news__list_item_info">
-										<div class="rating"></div>
-
-										<div class="bookmark">25</div>
-										<div class="comment">8</div>
-									</div>
-
-									<div class="news__list_item_footer">
-										<p class="news__list_item_footer-time">Время прочтения 8 м.</p>
-
-										<a href="" class="news__list_item_footer_link">Читать далее >
-										</a>
-									</div>
-								</div>
-							</li>
-							<li class="blog__content_news news__list_item">
-								<img src="img/blog/blog__news3.png" alt="blog_news" class="blog__content_news_img">
-
-								<p class="blog__content_news_title">МЕНЕЕ ПОПУЛЯРНАЯ</p>
-
-								<div class="news__descr">
-									<div class="news__list_item_author">
-										<img src="img/index/user__img.jpg" alt="" class="news__list_item_author-img">
-
-										<span class="news__list_item_author_name">Ярослав Иванов</span>
-										<span class="news__list_item_author_date">28.02.2020</span>
-									</div>
-
-									<div class="news__list_item_info">
-										<div class="rating"></div>
-
-										<div class="bookmark">25</div>
-										<div class="comment">8</div>
-									</div>
-
-									<div class="news__list_item_footer">
-										<p class="news__list_item_footer-time">Время прочтения 8 м.</p>
-
-										<a href="" class="news__list_item_footer_link">Читать далее >
-										</a>
-									</div>
-								</div>
-							</li>
-						</ul>
-						<ul class="blog__content_list">
-							<li class="blog__content_news news__list_item">
-								<img src="img/blog/blog__news4.png" alt="blog_news" class="blog__content_news_img">
-
-								<p class="blog__content_news_title">ОСТАЛЬНЫЕ СТАТЬИ</p>
-
-								<div class="news__descr">
-									<div class="news__list_item_author">
-										<img src="img/index/user__img.jpg" alt="" class="news__list_item_author-img">
-
-										<span class="news__list_item_author_name">Ярослав Иванов</span>
-										<span class="news__list_item_author_date">28.02.2020</span>
-									</div>
-
-									<div class="news__list_item_info">
-										<div class="rating"></div>
-
-										<div class="bookmark">25</div>
-										<div class="comment">8</div>
-									</div>
-
-									<div class="news__list_item_footer">
-										<p class="news__list_item_footer-time">Время прочтения 8 м.</p>
-
-										<a href="" class="news__list_item_footer_link">Читать далее >
-										</a>
-									</div>
-								</div>
-							</li>
-							<li class="blog__content_news news__list_item">
-								<img src="img/blog/blog__news6.png" alt="blog_news" class="blog__content_news_img">
-
-								<p class="blog__content_news_title">ОСТАЛЬНЫЕ СТАТЬИ</p>
-
-								<div class="news__descr">
-									<div class="news__list_item_author">
-										<img src="img/index/user__img.jpg" alt="" class="news__list_item_author-img">
-
-										<span class="news__list_item_author_name">Ярослав Иванов</span>
-										<span class="news__list_item_author_date">28.02.2020</span>
-									</div>
-
-									<div class="news__list_item_info">
-										<div class="rating"></div>
-
-										<div class="bookmark">25</div>
-										<div class="comment">8</div>
-									</div>
-
-									<div class="news__list_item_footer">
-										<p class="news__list_item_footer-time">Время прочтения 8 м.</p>
-
-										<a href="" class="news__list_item_footer_link">Читать далее >
-										</a>
-									</div>
-								</div>
-							</li>
-							<li class="blog__content_news news__list_item">
-								<img src="img/blog/blog__news7.png" alt="blog_news" class="blog__content_news_img">
-
-								<p class="blog__content_news_title">ОСТАЛЬНЫЕ СТАТЬИ</p>
-
-								<div class="news__descr">
-									<div class="news__list_item_author">
-										<img src="img/index/user__img.jpg" alt="" class="news__list_item_author-img">
-
-										<span class="news__list_item_author_name">Ярослав Иванов</span>
-										<span class="news__list_item_author_date">28.02.2020</span>
-									</div>
-
-									<div class="news__list_item_info">
-										<div class="rating"></div>
-
-										<div class="bookmark">25</div>
-										<div class="comment">8</div>
-									</div>
-
-									<div class="news__list_item_footer">
-										<p class="news__list_item_footer-time">Время прочтения 8 м.</p>
-
-										<a href="" class="news__list_item_footer_link">Читать далее >
-										</a>
-									</div>
-								</div>
-							</li>
-							<li class="blog__content_news news__list_item">
-								<img src="img/blog/blog__news8.png" alt="blog_news" class="blog__content_news_img">
-
-								<p class="blog__content_news_title">ОСТАЛЬНЫЕ СТАТЬИ</p>
-
-								<div class="news__descr">
-									<div class="news__list_item_author">
-										<img src="img/index/user__img.jpg" alt="" class="news__list_item_author-img">
-
-										<span class="news__list_item_author_name">Ярослав Иванов</span>
-										<span class="news__list_item_author_date">28.02.2020</span>
-									</div>
-
-									<div class="news__list_item_info">
-										<div class="rating"></div>
-
-										<div class="bookmark">25</div>
-										<div class="comment">8</div>
-									</div>
-
-									<div class="news__list_item_footer">
-										<p class="news__list_item_footer-time">Время прочтения 8 м.</p>
-
-										<a href="" class="news__list_item_footer_link">Читать далее >
-										</a>
-									</div>
-								</div>
-							</li>
-						</ul>
-						<form action="POST" class="blog__feedbackForm">
-							<p class="blog__feedbackForm_title section__title">ПОДПИШИТЕСЬ НА РАССЫЛКУ!</p>
-							<div class="blog__feedbackForm_wrapper">
-								<input type="email" placeholder="E-mail" class="blog__feedbackForm_input">
-								<input type="submit" value=">" class="blog__feedbackForm_submit">
-								<label class="blog__feedbackForm_label">
-									<input type="checkbox" class="blog__feedbackForm_checkbox">
-									Я согласен на обработку персональных данных
-								</label>
-							</div>
-						</form>
-						<ul class="blog__content_list">
-							<li class="blog__content_news news__list_item">
-								<img src="img/blog/blog__news9.png" alt="blog_news" class="blog__content_news_img">
-
-								<p class="blog__content_news_title">ОСТАЛЬНЫЕ СТАТЬИ</p>
-
-								<div class="news__descr">
-									<div class="news__list_item_author">
-										<img src="img/index/user__img.jpg" alt="" class="news__list_item_author-img">
-
-										<span class="news__list_item_author_name">Ярослав Иванов</span>
-										<span class="news__list_item_author_date">28.02.2020</span>
-									</div>
-
-									<div class="news__list_item_info">
-										<div class="rating"></div>
-
-										<div class="bookmark">25</div>
-										<div class="comment">8</div>
-									</div>
-
-									<div class="news__list_item_footer">
-										<p class="news__list_item_footer-time">Время прочтения 8 м.</p>
-
-										<a href="" class="news__list_item_footer_link">Читать далее >
-										</a>
-									</div>
-								</div>
-							</li>
-							<li class="blog__content_news news__list_item">
-								<img src="img/blog/blog__news10.png" alt="blog_news" class="blog__content_news_img">
-
-								<p class="blog__content_news_title">ОСТАЛЬНЫЕ СТАТЬИ</p>
-
-								<div class="news__descr">
-									<div class="news__list_item_author">
-										<img src="img/index/user__img.jpg" alt="" class="news__list_item_author-img">
-
-										<span class="news__list_item_author_name">Ярослав Иванов</span>
-										<span class="news__list_item_author_date">28.02.2020</span>
-									</div>
-
-									<div class="news__list_item_info">
-										<div class="rating"></div>
-
-										<div class="bookmark">25</div>
-										<div class="comment">8</div>
-									</div>
-
-									<div class="news__list_item_footer">
-										<p class="news__list_item_footer-time">Время прочтения 8 м.</p>
-
-										<a href="" class="news__list_item_footer_link">Читать далее >
-										</a>
-									</div>
-								</div>
-							</li>
-							<li class="blog__content_news news__list_item">
-								<img src="img/blog/blog__news11.png" alt="blog_news" class="blog__content_news_img">
-
-								<p class="blog__content_news_title">ОСТАЛЬНЫЕ СТАТЬИ</p>
-
-								<div class="news__descr">
-									<div class="news__list_item_author">
-										<img src="img/index/user__img.jpg" alt="" class="news__list_item_author-img">
-
-										<span class="news__list_item_author_name">Ярослав Иванов</span>
-										<span class="news__list_item_author_date">28.02.2020</span>
-									</div>
-
-									<div class="news__list_item_info">
-										<div class="rating"></div>
-
-										<div class="bookmark">25</div>
-										<div class="comment">8</div>
-									</div>
-
-									<div class="news__list_item_footer">
-										<p class="news__list_item_footer-time">Время прочтения 8 м.</p>
-
-										<a href="" class="news__list_item_footer_link">Читать далее >
-										</a>
-									</div>
-								</div>
-							</li>
-							<li class="blog__content_news news__list_item">
-								<img src="img/blog/blog__news8.png" alt="blog_news" class="blog__content_news_img">
-
-								<p class="blog__content_news_title">ОСТАЛЬНЫЕ СТАТЬИ</p>
-
-								<div class="news__descr">
-									<div class="news__list_item_author">
-										<img src="img/index/user__img.jpg" alt="" class="news__list_item_author-img">
-
-										<span class="news__list_item_author_name">Ярослав Иванов</span>
-										<span class="news__list_item_author_date">28.02.2020</span>
-									</div>
-
-									<div class="news__list_item_info">
-										<div class="rating"></div>
-
-										<div class="bookmark">25</div>
-										<div class="comment">8</div>
-									</div>
-
-									<div class="news__list_item_footer">
-										<p class="news__list_item_footer-time">Время прочтения 8 м.</p>
-
-										<a href="" class="news__list_item_footer_link">Читать далее >
-										</a>
-									</div>
-								</div>
-							</li>
-							<li class="blog__content_news news__list_item">
-								<img src="img/blog/blog__news9.png" alt="blog_news" class="blog__content_news_img">
-
-								<p class="blog__content_news_title">ОСТАЛЬНЫЕ СТАТЬИ</p>
-
-								<div class="news__descr">
-									<div class="news__list_item_author">
-										<img src="img/index/user__img.jpg" alt="" class="news__list_item_author-img">
-
-										<span class="news__list_item_author_name">Ярослав Иванов</span>
-										<span class="news__list_item_author_date">28.02.2020</span>
-									</div>
-
-									<div class="news__list_item_info">
-										<div class="rating"></div>
-
-										<div class="bookmark">25</div>
-										<div class="comment">8</div>
-									</div>
-
-									<div class="news__list_item_footer">
-										<p class="news__list_item_footer-time">Время прочтения 8 м.</p>
-
-										<a href="" class="news__list_item_footer_link">Читать далее >
-										</a>
-									</div>
-								</div>
-							</li>
-							<li class="blog__content_news news__list_item">
-								<img src="img/blog/blog__news10.png" alt="blog_news" class="blog__content_news_img">
-
-								<p class="blog__content_news_title">ОСТАЛЬНЫЕ СТАТЬИ</p>
-
-								<div class="news__descr">
-									<div class="news__list_item_author">
-										<img src="img/index/user__img.jpg" alt="" class="news__list_item_author-img">
-
-										<span class="news__list_item_author_name">Ярослав Иванов</span>
-										<span class="news__list_item_author_date">28.02.2020</span>
-									</div>
-
-									<div class="news__list_item_info">
-										<div class="rating"></div>
-
-										<div class="bookmark">25</div>
-										<div class="comment">8</div>
-									</div>
-
-									<div class="news__list_item_footer">
-										<p class="news__list_item_footer-time">Время прочтения 8 м.</p>
-
-										<a href="" class="news__list_item_footer_link">Читать далее >
-										</a>
-									</div>
-								</div>
-							</li>
-							<li class="blog__content_news news__list_item">
-								<img src="img/blog/blog__news11.png" alt="blog_news" class="blog__content_news_img">
-
-								<p class="blog__content_news_title">ОСТАЛЬНЫЕ СТАТЬИ</p>
-
-								<div class="news__descr">
-									<div class="news__list_item_author">
-										<img src="img/index/user__img.jpg" alt="" class="news__list_item_author-img">
-
-										<span class="news__list_item_author_name">Ярослав Иванов</span>
-										<span class="news__list_item_author_date">28.02.2020</span>
-									</div>
-
-									<div class="news__list_item_info">
-										<div class="rating"></div>
-
-										<div class="bookmark">25</div>
-										<div class="comment">8</div>
-									</div>
-
-									<div class="news__list_item_footer">
-										<p class="news__list_item_footer-time">Время прочтения 8 м.</p>
-
-										<a href="" class="news__list_item_footer_link">Читать далее >
-										</a>
-									</div>
-								</div>
-							</li>
-							<li class="blog__content_news news__list_item">
-								<img src="img/blog/blog__news8.png" alt="blog_news" class="blog__content_news_img">
-
-								<p class="blog__content_news_title">ОСТАЛЬНЫЕ СТАТЬИ</p>
-
-								<div class="news__descr">
-									<div class="news__list_item_author">
-										<img src="img/index/user__img.jpg" alt="" class="news__list_item_author-img">
-
-										<span class="news__list_item_author_name">Ярослав Иванов</span>
-										<span class="news__list_item_author_date">28.02.2020</span>
-									</div>
-
-									<div class="news__list_item_info">
-										<div class="rating"></div>
-
-										<div class="bookmark">25</div>
-										<div class="comment">8</div>
-									</div>
-
-									<div class="news__list_item_footer">
-										<p class="news__list_item_footer-time">Время прочтения 8 м.</p>
-
-										<a href="" class="news__list_item_footer_link">Читать далее >
-										</a>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-
-					<div class="projects__banner">
-						<ul class="projects__bannerList">
-							<li class="projects__bannerList_item">
-								<img src="img/common/project_1.png" alt="projects__img" class="projects__bannerList_item_img">
-								<p class="projects__bannerList_item_title">Bamboo Beach Tsikhisdziri</p>
-								<p class="projects__bannerList_item_location">Цихисдзири, Грузия</p>
-							</li>
-							<li class="projects__bannerList_item">
-								<img src="img/common/project_2.png" alt="projects__img" class="projects__bannerList_item_img">
-								<p class="projects__bannerList_item_title">Bamboo Beach Tsikhisdziri</p>
-								<p class="projects__bannerList_item_location">Цихисдзири, Грузия</p>
-							</li>
-							<li class="projects__bannerList_item">
-								<img src="img/common/project_3.png" alt="projects__img" class="projects__bannerList_item_img">
-								<p class="projects__bannerList_item_title">Bamboo Beach Tsikhisdziri</p>
-								<p class="projects__bannerList_item_location">Цихисдзири, Грузия</p>
-							</li>
-						</ul>
-
-						<a href="#" class="projects_bannerBtn">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</a>
-					</div>
+		</section>
+
+		<section class="article">
+			<div class="container">
+				<div class="article__description">
+					<p class="article__description_title">Содержание статьи</p>
+					<ol class="article__description_list">
+						<li class="article__description_list_item">Распространенный выход;</li>
+						<li class="article__description_list_item">Перекрасить надоевший деревянный;</li>
+						<li class="article__description_list_item">Он откликается и тем, кто любит;
+							<ol>
+								<li>Распространенный выход;</li>
+							</ol>
+						</li>
+						<li class="article__description_list_item">Перекрасить надоевший деревянный;</li>
+						<li class="article__description_list_item">Он откликается и тем, кто любит;</li>
+					</ol>
 				</div>
 
+				<h2>Современный мир меняется на глазах — и роль дома меняется вслед за ним. </h2>
+				<h3>Мы ценим пространства, способные трансформироваться вслед за нашими потребностями. </h3>
+				<img src="img/article/article__img_1.jpg" alt="article__image">
+				<p> Одно из главных слов года по мнению инфлюэнсеров — «трансформация». Мы ждем, что интерьер будет
+					гибким и
+					способным меняться в зависимости от наших пожеланий и предпочтений. </p>
+				<ol>
+					<li>Распространенный выход;</li>
+					<li>Перекрасить надоевший деревянный;</li>
+					<li>Он откликается и тем, кто любит;</li>
+				</ol>
 
-			</section>
+				<ul>
+					<li>Кому близок устойчивый дизайн;</li>
+					<li>Кому близок устойчивый дизайн;</li>
+					<li>Кому близок устойчивый дизайн;</li>
+				</ul>
+				<img src="img/article/article__img_2.jpg" alt="article__image">
+				<img src="img/article/article__img_3.jpg" alt="article__image">
+				<h4>Заголовок H4</h4>
+				<blockquote>При всей популярности у покраски деревянного пола есть свои плюсы и минусы. В числе
+					несомненных
+					достоинств тот факт, что с помощью краски можно придать старому и изношенному <b>деревянному полу</b>
+					совершенно новый вид, сделать поверхность визуально более однородной. Практически нет ограничений по
+					выбору цвета — пол может стать нейтральным фоном для ярких акцентов, активных фактур и предметов
+					мебели.
+				</blockquote>
+				<p>При всей популярности у покраски деревянного пола есть свои плюсы и
+					минусы. В числе несомненных достоинств тот факт, что с помощью краски
+					можно придать старому и изношенному деревянному полу совершенно
+					новый вид, сделать поверхность визуально <b>более однородной</b>. Практически нет ограничений по
+					выбору
+					цвета — пол может стать нейтральным фоном для ярких акцентов, активных фактур и предметов мебели.
+					Практически нет ограничений по выбору цвета — пол может стать нейтральным.
+				</p>
+
+				<table>
+					<thead>
+						<tr>
+							<th>Содержание 1</th>
+							<th>Содержание 2</th>
+							<th>Содержание 3</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Содержание 1</td>
+							<td>Акриловой краски</td>
+							<td>Акриловой краски</td>
+						</tr>
+						<tr>
+							<td>Содержание 1</td>
+							<td>Акриловой краски</td>
+							<td>Акриловой краски</td>
+						</tr>
+						<tr>
+							<td>Содержание 1</td>
+							<td>Акриловой краски</td>
+							<td>Акриловой краски</td>
+						</tr>
+						<tr>
+							<td>Содержание 1</td>
+							<td>Акриловой краски</td>
+							<td>Акриловой краски</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<b>
+					Мы ценим пространства, способные трансформироваться вслед за нашими потребностями. Это касается как
+					наполнения интерьеров, так и их отделки, включая покрытие пола.
+				</b>
+			</div>
+		</section>
 
 
-			@@include('../components/footer/footer.html')
-		</main>
-		<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-		<script src="js/redco.js"></script>
-		<script src="js/blog.min.js"></script>
+
+		@@include('../components/footer/footer.html')
+	</main>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script src="js/redco.js"></script>
+	<script src="js/article.min.js"></script>
 
 
-		<form action="POST" class="feedback__form">
-			<input type="submit" value="update" class="feedback__form_submit phone">
-			<input type="tel" name="intro__form_text" id="feedback__form_tel" class="feedback__form_tel" placeholder="Введите ваш номер">
-			<input type="submit" value="submit" class="feedback__form_submit arrow">
-		</form>
+	<form action="POST" class="feedback__form">
+		<input type="submit" value="update" class="feedback__form_submit phone">
+		<input type="tel" name="intro__form_text" id="feedback__form_tel" class="feedback__form_tel"
+			placeholder="Введите ваш номер">
+		<input type="submit" value="submit" class="feedback__form_submit arrow">
+	</form>
 
-	</body>
+</body>
 
 </html>

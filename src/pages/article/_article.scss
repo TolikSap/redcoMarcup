@@ -1,0 +1,213 @@
+@import "../sass/misc/env";
+@import "../sass/misc/mixins";
+@import "../sass/misc/fonts";
+
+.article__page{
+    .intro{
+        background-color: #25282B;
+
+        .container{
+            position: relative;
+            
+            @include laptop{
+                padding-top: 120px;
+            }
+        }
+    }
+
+    .into__title{
+        z-index: 1;
+        max-width: 520px;
+        margin-left: 0;
+        text-align: left;
+
+    }
+
+    .intro__img{
+        position: absolute;
+        bottom: 30px;
+        right: 0;
+        max-height: 400px;
+        min-width: 800px;
+        border-radius: 7px;
+    }
+
+    #scroll-bar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 6px;
+        background-color: #BA0C2F;
+    }
+
+    .news__list_item_author{
+        z-index: 1;
+
+        .news__list_item_author_name{
+            color: #FFFFFF;
+        }
+
+        .news__list_item_author_date{
+            color: #FFFFFF;
+        }
+    }
+
+    .intro__stats{
+        display: flex;
+        z-index: 1;
+        color: #FFFFFF;
+        font-family: OpenSans, sans-serif;
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+.article{
+    .article__description{
+        max-width: 830px;
+        width: 100%;
+        background: #F5F5F5;
+        border-radius: 7px;
+        padding: 20px;
+        margin: 0 auto 20px;
+        font-family: OpenSansBold, sans-serif;
+
+        .article__description_title{
+            font-family: OpenSansBold, sans-serif;
+            font-size: 20px;
+            line-height: 27px;
+        }
+
+        .article__description_list{
+            li{
+                &:not(:last-of-type){
+                    margin-bottom: 15px;
+                }
+
+                ol{
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
+    ol{
+        counter-reset: item;
+        font-family: OpenSans, sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+
+        li{
+            display: block;
+
+            &::before{
+                content: counters(item, ".") ".";
+                counter-increment: item;
+            }
+        }
+    }
+
+    h2{
+        font-size: 30px;
+        line-height: 45px;
+        font-family: OpenSansBold, sans-serif;
+        max-width: 830px;
+        margin: 0 auto 12px;
+    }
+
+    h3{
+        font-size: 20px;
+        line-height: 30px;
+        font-family: OpenSansBold, sans-serif;
+        max-width: 830px;
+        margin: 0 auto 12px;
+    }
+
+    img{
+        float: right;
+        max-width: 470px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    p{
+       font-family: OpenSans, sans-serif;
+       font-size: 16px;
+       line-height: 24px;
+       color: #000000;
+       max-width: 830px;
+       margin: 0 auto 12px;
+    }
+
+    ul{
+        font-family: OpenSans, sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        color: #000000;
+        li{
+            padding-left: 5px;
+
+            &::before{
+                content: '';
+                display: inline-block;
+                background-color: #BA0C2F;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    blockquote{
+        background-color: #EAFFED;
+        border-radius: 7px;
+        padding: 20px;
+        font-family: OpenSans, sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        color: #000000;
+        margin-bottom: 20px;
+        max-width: 830px;
+
+        b{
+            font-family: OpenSansBold, sans-serif;
+        }
+    }
+
+    table{
+        thead{
+            border: 1px solid #BA0C2F;
+            background-color: #BA0C2F;
+            font-family: OpenSansBold, sans-serif;
+            color: #FFFFFF;
+            font-size: 20px;
+            line-height: 27px;
+
+            tr{
+                border-radius: 7px 7px 0px 0px;
+                min-height: 80px;
+                height: 80px;
+            }
+        }
+
+        tbody{
+            tr{
+                font-family: OpenSans, sans-serif;
+                font-size: 16px;
+                line-height: 22px;
+                color: #000000;
+
+                &:nth-of-type(even){
+                    background-color: #F5F5F5;
+                }
+            }
+        }
+
+        tr{
+            height: 80px;
+            vertical-align: middle;
+            text-align: center;
+        }
+    }
+}

@@ -1262,6 +1262,14 @@
     &__title {
       color: #000000;
       margin-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      @include tablet{
+        padding-left: 0;
+        padding-right: 0;
+      }
+
     }
 
     .reviews__list {
@@ -1315,7 +1323,8 @@
             position: absolute;
             z-index: 10;
             transition: all 0.3s ease-in;
-            top: 60px;
+            top: 100px;
+            display: block;
         }
 
         &:hover {
@@ -1348,7 +1357,7 @@
       padding-bottom: 90px;
       width: 100%;
       font-size: 14px;
-    line-height: 19px;
+      line-height: 19px;
       color: #fff;
       font-family: OpenSans, sans-serif;
       position: relative;
@@ -1380,8 +1389,12 @@
         height: 49px;
         top: 20px;
         left: 20px;
-
-        content: url("../img/index/reviews__before.svg");
+        background-image: url("../img/index/reviews__before.svg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: translateY(-50%);
+        content: '';
       }
     }
 

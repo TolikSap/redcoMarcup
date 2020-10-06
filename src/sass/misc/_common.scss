@@ -68,6 +68,45 @@
   }
 }
 
+.defaultBtn{
+  border-radius: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  min-height: 40px;
+  font-family: OpenSans, sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  transition: all 0.3s ease-in;
+
+  &-red{
+    background-color: #BA0C2F;
+    border: 1px solid #F5F5F5;
+    color: #ffffff;
+
+    &:hover{
+      background-color: #F5F5F5;
+      border-color: #BA0C2F;
+      color: #070707;
+    }
+  }
+
+  &-white{
+    background-color: #F5F5F5;
+    border: 1px solid #BA0C2F;
+    color: #070707;
+
+    &:hover{
+      background-color: #BA0C2F;
+      border-color: #F5F5F5;
+      color: #ffffff;
+    }
+  }
+}
+
 .contacts__widget {
   font-weight: normal;
   font-size: 14px;
@@ -311,6 +350,18 @@
     font-size: 15px;
     line-height: 20px;
     font-family: OpenSans, sans-serif;
+    position: relative;
+
+    &::after{
+      content: '>';
+      display: inline-block;
+      color: #B4B4B4;
+      font-size: 15px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
     a {
       color: #b4b4b4;
@@ -330,6 +381,10 @@
       font-family: OpenSansBold, sans-serif;
       a {
         color: #ffffff;
+      }
+
+      &::after{
+        display: none;
       }
     }
   }
@@ -869,36 +924,37 @@
   }
 }
 
-.news__list_item {
-  .news__list_item_author {
-    display: block;
-    margin-bottom: 16px;
+.news__list_item_author {
+  display: block;
+  margin-bottom: 16px;
 
-    .news__list_item_author-img {
-      max-width: 40px;
-      min-width: 40px;
-      max-height: 40px;
-      min-height: 40px;
-      margin-right: 10px;
-      float: left;
-    }
-
-    .news__list_item_author_name {
-      font-size: 16px;
-      line-height: 22px;
-      color: #25282b;
-      font-family: OpenSans, sans-serif;
-      display: block;
-    }
-
-    .news__list_item_author_date {
-      color: #25282b;
-      font-size: 12px;
-      line-height: 16px;
-      font-family: OpenSans, sans-serif;
-    }
+  .news__list_item_author-img {
+    max-width: 40px;
+    min-width: 40px;
+    max-height: 40px;
+    min-height: 40px;
+    margin-right: 10px;
+    float: left;
+    border-radius: 10px;
   }
 
+  .news__list_item_author_name {
+    font-size: 16px;
+    line-height: 22px;
+    color: #25282b;
+    font-family: OpenSans, sans-serif;
+    display: block;
+  }
+
+  .news__list_item_author_date {
+    color: #25282b;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: OpenSans, sans-serif;
+  }
+}
+
+.news__list_item {
   .news__list_item_info {
     display: flex;
     margin-bottom: 15px;
