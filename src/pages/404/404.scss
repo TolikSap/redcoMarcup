@@ -1,7 +1,12 @@
-@import "../sass/misc/env";
-@import "../sass/misc/mixins";
-@import "../sass/misc/fonts";
+@import "../../sass/misc/fonts";
+@import "../../sass/misc/env";
+@import "../../sass/misc/mixins";
+@import "../../sass/misc/common";
+@import "../../sass/misc/adjustment";
 
+@import "../../../node_modules/normalize-scss/sass/normalize/import-now";
+@import "../../components/header/headerStyle";
+@import "../../components/footer/footerStyle";
 
 .pageNotFound{
     background-color: #F5F5F5;
