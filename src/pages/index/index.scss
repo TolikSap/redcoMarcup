@@ -241,7 +241,7 @@
       margin-right: auto;
       position: relative;
       padding-bottom: 30px;
-      background-image: url("../img/index/investors__bg.png");
+      background-image: url("../img/index/investors__bg.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       width: 100vw;
@@ -616,6 +616,7 @@
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
+      margin-bottom: 60px;
     }
 
     .advantages__descr_info_num {
@@ -624,6 +625,7 @@
       font-family: Montserrat-Bold, sans-serif;
       color: #ba0c2f;
       display: flex;
+      letter-spacing: 24px;
       margin-bottom: 15px;
 
       @include tablet {
