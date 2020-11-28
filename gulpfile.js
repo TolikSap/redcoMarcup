@@ -21,6 +21,7 @@ gulp.task('scss', function() {
   .pipe(rename({suffix:'.min', dirname: ''})) // для переименования конечных файлов css и для изменения конечной структуры проекта
   .pipe(maps.write())
   .pipe(gulp.dest('./dist/css')) // сборка проекта с указанием конечной директории
+  .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('img',() => {
