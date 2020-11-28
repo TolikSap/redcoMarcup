@@ -22,6 +22,10 @@
     .header__nav{
         display: none;
 
+        @include tablet{
+            display: flex;
+        }
+
         &.active{
             display: flex;
             position: absolute;
@@ -45,9 +49,14 @@
                 }
             }
         }
+    }
+
+    .nav__list{
+        display: flex;
+        align-items: center;
 
         @include tablet{
-            display: flex;
+            margin-right: 60px;
         }
     }
 
@@ -220,6 +229,7 @@
     color: #fff;
     transition: all 0.3s ease-in-out;
     font-family: OpenSans, sans-serif;
+    position: relative;
 
     @include tablet{
         display: flex;
@@ -228,6 +238,11 @@
     &:hover{
         cursor: pointer;
         opacity: 0.7;
+
+        .header__langList{
+            opacity: 1;
+            visibility: visible;
+        }
     }
 
     &::after{
@@ -237,7 +252,36 @@
         width: 8px;
         height: 4px;
     }
-
-    
 }
 
+.header__langList{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: all 0.3s ease-in;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transform: translateY(100%);
+    border-radius: 17px;
+    border: 1px solid #fff;
+    width: 100%;
+    background-color: #25282b;
+
+    &_item{
+        &:not(:last-of-type){
+            margin-bottom: 5px;
+        }
+    }
+    
+    .header__langList_link{
+        transition: all 0.3s ease-in;
+        color: #fff;
+        text-decoration: none;
+
+        &:hover{
+            color: #ba0c2f;
+        }
+    }
+}

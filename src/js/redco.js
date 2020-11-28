@@ -93,17 +93,16 @@
         document.addEventListener("DOMContentLoaded", function (event) {
             const headerContainer = document.getElementById('header__container'),
                   headerMenuBtn = document.getElementById('header__menu_mob-btn'),
-                  headerNav = document.getElementById('header__nav'),
-                  headerLogo = document.getElementById('header__logo'),
+                  headerNavList = document.getElementById('nav__list'),
                   headerMenuBtnWrap = document.getElementById('header__menu_mob');
 
             headerMenuBtn.addEventListener('click', function (ev) {
                 ev.preventDefault();
 
-                if (headerNav.classList.contains('active')) {
-                    headerNav.classList.remove('active');
+                if (headerNavList.classList.contains('active')) {
+                    headerNavList.classList.remove('active');
                 } else {
-                    headerNav.classList.add('active');
+                    headerNavList.classList.add('active');
                 };
 
                 if (headerMenuBtnWrap.classList.contains('active')) {
