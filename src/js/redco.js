@@ -41,7 +41,6 @@
             };
         });
     };
-    stickyHeader();
 
     const faq = () => {
         let faqItem = document.getElementsByClassName("faq__list_item");
@@ -54,7 +53,6 @@
             }
         }
     };
-    faq();
 
     const progressBar = () => {
         const progressBarItems = Array.from(document.getElementsByClassName('progressBar__list_item'));
@@ -90,7 +88,6 @@
             });
         }
     }
-    progressBar();
 
     const initializeHeaderMobileMenu = () => {
         document.addEventListener("DOMContentLoaded", function (event) {
@@ -135,7 +132,6 @@
             });
         });
     };
-    initializeHeaderMobileMenu();
 
     const animationCounter = () => {
         document.addEventListener("DOMContentLoaded", function (event) {
@@ -180,7 +176,6 @@
             }
         });
     };
-    animationCounter();
 
     const btn404BackFunction = () => {
         document.addEventListener("DOMContentLoaded", function (event) {
@@ -197,6 +192,12 @@
             }
         });
     }
+
+    faq();
+    progressBar();
+    initializeHeaderMobileMenu();
+    animationCounter();
+    stickyHeader();
     btn404BackFunction();
 })();
 
