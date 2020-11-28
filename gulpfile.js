@@ -1,5 +1,5 @@
 const gulp = require('gulp'),
-      sass = require('gulp-sass');
+      sass = require('gulp-sass'),
       browserSync = require('browser-sync'),
       plumber = require('gulp-plumber'),
       autoprefixer = require('gulp-autoprefixer'),
@@ -8,28 +8,21 @@ const gulp = require('gulp'),
       rename = require('gulp-rename'),
       fileinclude  = require('gulp-file-include'), 
       htmlmin 	 = require('gulp-htmlmin'),
-      babel 		 = require('gulp-babel'),
 		  uglify 		 = require('gulp-uglify'),
       imagemin = require('gulp-imagemin');
 
-gulp.task('sass', () => {
-   gulp.src([
-    'src/sass/main.scss',
-    'src/components/**/*.scss',
-    'src/pages/**/*.scss',
-  ])
+gulp.task('scss', function() {
+  gulp.src('./src/pages/**/*.scss')
   .pipe(maps.init())
   .pipe(plumber())
-	.pipe(sass()) // для препроцессора css - sass 
+	.pipe(sass().on('error', sass.logError))
 	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // для кроссбраузерности
 	.pipe(csso()) // минификация css
   .pipe(rename({suffix:'.min', dirname: ''})) // для переименования конечных файлов css и для изменения конечной структуры проекта
   .pipe(maps.write())
-  .pipe(gulp.dest('dist/css/')) // сборка проекта с указанием конечной директории
-  .pipe(browserSync.reload({
-		stream: true})); // отслеживание ошибок в режиме стрима
+  .pipe(gulp.dest('./dist/css')) // сборка проекта с указанием конечной директории
 });
-  
+
 gulp.task('img',() => {
    gulp.src('src/assets/**/*.*')
   .pipe(imagemin([
@@ -63,10 +56,7 @@ gulp.task('html', () => {
 
 gulp.task('js', () =>
   gulp.src('src/js/*.js')
-  .pipe(plumber()) 
-  .pipe(babel({
-    presets: ['env']
-  }))
+  .pipe(plumber())
   .pipe(maps.init())
 	.pipe(rename(
 		{suffix:'.min', dirname: ''})) // для переименования конечных файлов css и для изменения конечной структуры проекта
@@ -74,7 +64,6 @@ gulp.task('js', () =>
 	.pipe(maps.write())
 	.pipe(gulp.dest('dist/js/'))
 );
-
 
 gulp.task('reload', () => {
   browserSync({
@@ -85,8 +74,8 @@ gulp.task('reload', () => {
   });
 });
 
-gulp.task('watch', ['reload','sass', 'html','js'], () => {
-  gulp.watch(['src/**/*.scss'], ['sass'], browserSync.reload);
-  gulp.watch(['src/pages/**/*.html'], ['html']);
-  gulp.watch(['src/js/*.js'], ['js'])
+gulp.task('watch', ['reload','scss', 'html','js'], () => {
+  gulp.watch(['src/**/*.scss'], ['scss'], browserSync.reload);
+  gulp.watch(['src/pages/**/*.html'], ['html'], browserSync.reload);
+  gulp.watch(['src/js/*.js'], ['js'], browserSync.reload);
 });
