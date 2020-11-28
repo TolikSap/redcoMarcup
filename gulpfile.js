@@ -8,7 +8,8 @@ const gulp = require('gulp'),
       rename = require('gulp-rename'),
       fileinclude  = require('gulp-file-include'), 
       htmlmin 	 = require('gulp-htmlmin'),
-		  uglify 		 = require('gulp-uglify'),
+      uglify 		 = require('gulp-uglify'),
+      babel 		 = require('gulp-babel'),
       imagemin = require('gulp-imagemin');
 
 gulp.task('scss', function() {
@@ -57,6 +58,9 @@ gulp.task('html', () => {
 
 gulp.task('js', () =>
   gulp.src('src/js/*.js')
+  .pipe(babel({
+    presets: ['env']
+  }))
   .pipe(plumber())
   .pipe(maps.init())
 	.pipe(rename(
