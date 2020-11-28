@@ -118,12 +118,6 @@
                     headerMenuBtn.classList.add('active');
                 };
 
-                if (headerLogo.classList.contains('active')) {
-                    headerLogo.classList.remove('active');
-                } else {
-                    headerLogo.classList.add('active');
-                }
-
                 if (headerContainer.classList.contains('active')) {
                     headerContainer.classList.remove('active');
                 } else {
