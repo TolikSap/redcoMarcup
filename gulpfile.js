@@ -1,86 +1,134 @@
-const gulp = require('gulp'),
-      sass = require('gulp-sass'),
-      browserSync = require('browser-sync'),
-      plumber = require('gulp-plumber'),
-      autoprefixer = require('gulp-autoprefixer'),
-      csso = require('gulp-csso'),
-      maps = require('gulp-sourcemaps'),
-      rename = require('gulp-rename'),
-      fileinclude  = require('gulp-file-include'), 
-      htmlmin 	 = require('gulp-htmlmin'),
-      uglify 		 = require('gulp-uglify'),
-      babel 		 = require('gulp-babel'),
-      imagemin = require('gulp-imagemin');
+"use strict";
 
-gulp.task('scss', function() {
-  gulp.src('./src/pages/**/*.scss')
-  .pipe(maps.init())
-  .pipe(plumber())
-	.pipe(sass().on('error', sass.logError))
-	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // для кроссбраузерности
-	.pipe(csso()) // минификация css
-  .pipe(rename({suffix:'.min', dirname: ''})) // для переименования конечных файлов css и для изменения конечной структуры проекта
-  .pipe(maps.write())
-  .pipe(gulp.dest('./dist/css')) // сборка проекта с указанием конечной директории
-  .pipe(browserSync.reload({stream: true}));
-});
+// Load plugins
+const autoprefixer = require("autoprefixer");
+const browsersync = require("browser-sync").create();
+const cp = require("child_process");
+const cssnano = require("cssnano");
+const del = require("del");
+const eslint = require("gulp-eslint");
+const gulp = require("gulp");
+const imagemin = require("gulp-imagemin");
+const newer = require("gulp-newer");
+const plumber = require("gulp-plumber");
+const postcss = require("gulp-postcss");
+const rename = require("gulp-rename");
+const sass = require("gulp-sass");
+const webpack = require("webpack");
+const webpackconfig = require("./webpack.config.js");
+const webpackstream = require("webpack-stream");
+const notify = require("gulp-notify");
 
-gulp.task('img',() => {
-   gulp.src('src/assets/**/*.*')
-  .pipe(imagemin([
-    imagemin.gifsicle({interlaced: true}),
-    imagemin.jpegtran({progressive: true}),
-    imagemin.optipng({optimizationLevel: 5}),
-    imagemin.svgo({
-      plugins: [
-        {removeViewBox: true},
-        {cleanupIDs: false}
-      ]
-    })
-  ]))
-  .pipe(gulp.dest('dist/img'))
-})
-
-gulp.task('fonts',() => {
-  return gulp.src('src/fonts/**/*')
-  .pipe(gulp.dest('dist/fonts')); 
-})
-
-gulp.task('html', () => {
-   gulp.src('src/pages/**/*.html')
-  .pipe(rename({dirname: ''}))
-  .pipe(fileinclude())
-  .pipe(htmlmin({ removeComments: true }))
-  .pipe(rename({dirname: ''}))
-  .pipe(gulp.dest('dist/'))
-  .pipe(browserSync.reload({stream: true}));
-});
-
-gulp.task('js', () =>
-  gulp.src('src/js/*.js')
-  .pipe(babel({
-    presets: ['env']
-  }))
-  .pipe(plumber())
-  .pipe(maps.init())
-	.pipe(rename(
-		{suffix:'.min', dirname: ''})) // для переименования конечных файлов css и для изменения конечной структуры проекта
-	.pipe(uglify())
-	.pipe(maps.write())
-	.pipe(gulp.dest('dist/js/'))
-);
-
-gulp.task('reload', () => {
-  browserSync({
+// BrowserSync
+function browserSync(done) {
+  browsersync.init({
     server: {
-      baseDir: 'dist/'
+      baseDir: "./dist/"
     },
-    notify: false,
+    port: 3000
   });
-});
+  done();
+}
 
-gulp.task('watch', ['reload','scss', 'html','js'], () => {
-  gulp.watch(['src/**/*.scss'], ['scss'], browserSync.reload);
-  gulp.watch(['src/pages/**/*.html'], ['html'], browserSync.reload);
-  gulp.watch(['src/js/*.js'], ['js'], browserSync.reload);
-});
+// BrowserSync Reload
+function browserSyncReload(done) {
+  browsersync.reload();
+  done();
+}
+
+// Clean assets
+function clean() {
+  return del(["./dist/"]);
+}
+
+// Optimize Images
+function images() {
+  return gulp
+    .src("./src/assets/**/*")
+    .pipe(newer("./src/assets/**/*"))
+    .pipe(
+      imagemin([
+        imagemin.mozjpeg({ progressive: true }),
+        imagemin.optipng({ optimizationLevel: 5 }),
+      ])
+    )
+    .pipe(gulp.dest("./dist/assets/"));
+}
+
+// CSS task
+function css() {
+  return gulp
+    .src("./src/scss/**/*.scss")
+    .pipe(plumber({ errorHandler: function(err) {
+      notify.onError({
+          title: "Gulp error in " + err.plugin,
+          message:  err.toString()
+      })(err);
+    }}))
+    .pipe(sass({ outputStyle: "expanded" }))
+    .pipe(gulp.dest("./dist/assets/css/"))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(gulp.dest("./dist/assets/css/"))
+    .pipe(browsersync.stream());
+}
+
+// Lint scripts
+function scriptsLint() {
+  return gulp
+    .src(["./src/js/**/*", "./gulpfile.js"])
+    .pipe(plumber())
+    .pipe( eslint() )
+    .pipe( eslint.format("stylish") )
+    .pipe( eslint.failOnError() );
+}
+
+// Transpile, concatenate and minify scripts
+function scripts() {
+  return (
+    gulp
+      .src(["./src/js/**/*"])
+      .pipe(plumber())
+      .pipe(webpackstream(webpackconfig, webpack))
+      // folder only, filename is specified in webpack config
+      .pipe(gulp.dest("./dist/assets/js/"))
+      .pipe(browsersync.stream())
+  );
+}
+
+// Jekyll
+function jekyll() {
+  return cp.spawn("bundle", ["exec", "jekyll", "build"], { stdio: "inherit" });
+}
+
+function html(){
+  return (
+    gulp.src("src/pages/**/*.html")
+    .pipe(gulp.dest("./dist"))
+    .pipe(browsersync.stream())
+  );
+}
+
+// Watch files
+function watchFiles() {
+  gulp.watch("./src/scss/**/*", css);
+  gulp.watch("./src/js/**/*", gulp.series(scriptsLint, scripts));
+  gulp.watch("./src/pages/**/*.html",gulp.series(html, browserSyncReload)
+  );
+  gulp.watch("./src/assets/**/*", images);
+}
+
+// define complex tasks
+const js = gulp.series(scriptsLint, scripts);
+const build = gulp.series(clean, gulp.parallel(css, images, html, js));
+const watch = gulp.parallel(watchFiles, browserSync);
+
+// export tasks
+exports.images = images;
+exports.css = css;
+exports.js = js;
+exports.jekyll = jekyll;
+exports.clean = clean;
+exports.build = build;
+exports.watch = watch;
+exports.default = build;

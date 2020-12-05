@@ -1,55 +1,48 @@
 {
-  "name": "template",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "private": true,
-  "repository": {
-    "private": true
-  },
+  "name": "safecrimea",
+  "version": "1.0.0",
+  "description": "landing page",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtytarenko/SafeCrimea.git"
+  },
+  "keywords": [
+    "lading",
+    "page"
+  ],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dtytarenko/SafeCrimea/issues"
+  },
+  "homepage": "https://github.com/dtytarenko/SafeCrimea#readme",
   "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@babel/plugin-transform-jscript": "^7.2.0",
-    "@babel/preset-env": "^7.6.0",
-    "autoprefixer": "^10.0.4",
-    "babel": "^6.23.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
+    "babel-eslint": "^10.1.0",
     "browser-sync": "^2.26.13",
-    "csso": "^4.2.0",
-    "file-include": "^0.3.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-babel": "^7.0.1",
-    "gulp-csso": "^3.0.1",
-    "gulp-file-include": "^2.2.2",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-nunjucks-render": "^2.2.2",
+    "cssnano": "^4.1.10",
+    "del": "^6.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
-    "gulp-rename": "^1.4.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2",
-    "htmlmin": "0.0.7",
-    "imagemin": "^7.0.1",
-    "install": "^0.13.0",
-    "maps": "^0.3.3",
-    "npm": "^6.11.3",
-    "plumber": "^0.4.8",
-    "rename": "^1.0.4",
-    "uglify": "^0.1.5"
+    "newer": "^0.1.5",
+    "swiper": "^6.3.5",
+    "webpack": "^5.3.2",
+    "webpack-stream": "^6.1.0"
   },
   "dependencies": {
-    "ajax": "0.0.4",
-    "bootstrap": "^4.0.0-alpha.4",
-    "normalize-scss": "^7.0.1",
-    "normalize.css": "^8.0.0"
+    "eslint-auto-fix": "^1.0.3"
   }
 }
