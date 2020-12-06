@@ -18,6 +18,8 @@ const webpack = require("webpack");
 const webpackconfig = require("./webpack.config.js");
 const webpackstream = require("webpack-stream");
 const notify = require("gulp-notify");
+const fileinclude = require("gulp-file-include");
+const htmlmin = require('gulp-htmlmin');
 
 // BrowserSync
 function browserSync(done) {
@@ -103,8 +105,12 @@ function jekyll() {
 
 function html(){
   return (
-    gulp.src("src/pages/**/*.html")
-    .pipe(gulp.dest("./dist"))
+    gulp.src('src/pages/**/*.html')
+    .pipe(rename({dirname: ''}))
+    .pipe(fileinclude())
+    .pipe(htmlmin({ removeComments: true }))
+    .pipe(rename({dirname: ''}))
+    .pipe(gulp.dest('dist/'))
     .pipe(browsersync.stream())
   );
 }
