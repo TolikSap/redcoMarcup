@@ -60,7 +60,9 @@ function images() {
 // CSS task
 function css() {
   return gulp
-    .src("./src/scss/**/*.scss")
+    .src(["./src/scss/**/*.scss",
+      "./src/pages/**/*.scss"
+    ])
     .pipe(plumber({ errorHandler: function(err) {
       notify.onError({
           title: "Gulp error in " + err.plugin,
@@ -68,10 +70,10 @@ function css() {
       })(err);
     }}))
     .pipe(sass({ outputStyle: "expanded" }))
-    .pipe(gulp.dest("./dist/assets/css/"))
     .pipe(rename({ suffix: ".min" }))
     .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(gulp.dest("./dist/assets/css/"))
+    .pipe(rename({dirname: ''}))
+    .pipe(gulp.dest("./dist/css/"))
     .pipe(browsersync.stream());
 }
 
@@ -117,7 +119,7 @@ function html(){
 
 // Watch files
 function watchFiles() {
-  gulp.watch("./src/scss/**/*", css);
+  gulp.watch(["./src/scss/**/*", "./src/pages/**/*.scss"], css);
   gulp.watch("./src/js/**/*", gulp.series(scriptsLint, scripts));
   gulp.watch("./src/pages/**/*.html",gulp.series(html, browserSyncReload)
   );
