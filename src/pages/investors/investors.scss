@@ -1,10 +1,10 @@
-@import "../../sass/misc/fonts";
-@import "../../sass/misc/env";
-@import "../../sass/misc/mixins";
-@import "../../sass/misc/common";
-@import "../../sass/misc/adjustment";
+@import "../../scss/misc/fonts";
+@import "../../scss/misc/env";
+@import "../../scss/misc/mixins";
+@import "../../scss/misc/common";
+@import "../../scss/misc/adjustment";
+@import "../../scss/misc/normalize";
 
-@import "../../../node_modules/normalize-scss/sass/normalize/import-now";
 @import "../../components/header/headerStyle";
 @import "../../components/footer/footerStyle";
 .investors__intro{
