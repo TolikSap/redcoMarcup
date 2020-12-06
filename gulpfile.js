@@ -54,7 +54,7 @@ function images() {
         imagemin.optipng({ optimizationLevel: 5 }),
       ])
     )
-    .pipe(gulp.dest("./dist/assets/"));
+    .pipe(gulp.dest("./dist/img/"));
 }
 
 // CSS task
