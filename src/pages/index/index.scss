@@ -1044,6 +1044,12 @@
             cursor: pointer;
           }
         }
+
+        .maps__water{
+          &:hover{
+            fill: #77C9F8;
+          }
+        }
       }
 
       .map__descr{
