@@ -19,7 +19,7 @@ const webpackconfig = require("./webpack.config.js");
 const webpackstream = require("webpack-stream");
 const notify = require("gulp-notify");
 const fileinclude = require("gulp-file-include");
-const htmlmin = require('gulp-htmlmin');
+const htmlmin = require("gulp-htmlmin");
 
 // BrowserSync
 function browserSync(done) {
@@ -72,7 +72,7 @@ function css() {
     .pipe(sass({ outputStyle: "expanded" }))
     .pipe(rename({ suffix: ".min" }))
     .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(rename({dirname: ''}))
+    .pipe(rename({dirname: ""}))
     .pipe(gulp.dest("./dist/css/"))
     .pipe(browsersync.stream());
 }
@@ -95,7 +95,7 @@ function scripts() {
       .pipe(plumber())
       .pipe(webpackstream(webpackconfig, webpack))
       // folder only, filename is specified in webpack config
-      .pipe(gulp.dest("./dist/assets/js/"))
+      .pipe(gulp.dest("./dist/js/"))
       .pipe(browsersync.stream())
   );
 }
@@ -107,12 +107,12 @@ function jekyll() {
 
 function html(){
   return (
-    gulp.src('src/pages/**/*.html')
-    .pipe(rename({dirname: ''}))
+    gulp.src("src/pages/**/*.html")
+    .pipe(rename({dirname: ""}))
     .pipe(fileinclude())
     .pipe(htmlmin({ removeComments: true }))
-    .pipe(rename({dirname: ''}))
-    .pipe(gulp.dest('dist/'))
+    .pipe(rename({dirname: ""}))
+    .pipe(gulp.dest("dist/"))
     .pipe(browsersync.stream())
   );
 }

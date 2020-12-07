@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/dtytarenko/SafeCrimea#readme",
   "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
     "babel-eslint": "^10.1.0",
     "browser-sync": "^2.26.13",
     "cssnano": "^4.1.10",
@@ -45,6 +47,8 @@
     "webpack-stream": "^6.1.0"
   },
   "dependencies": {
-    "eslint-auto-fix": "^1.0.3"
+    "babel-loader": "^8.2.2",
+    "eslint-auto-fix": "^1.0.3",
+    "eslint-loader": "^4.0.2"
   }
 }

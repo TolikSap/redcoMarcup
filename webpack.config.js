@@ -2,24 +2,33 @@ const path = require("path");
 
 module.exports = {
   mode: "production",
-  entry: "./src/js/main.js",
+  entry: {
+    "article": "./src/js/article.js",
+    "index": "./src/js/index.js"
+  },
   output: {
-    path: path.resolve(__dirname, "./_site/assets/js"),
-    filename: "main.bundle.js",
+    path: path.resolve(__dirname, "/dist/js"),
+    filename: '[name].min.js'
   },
   module: {
     rules: [
       {
         enforce: "pre",
         test: /\.js$/,
-        include: [path.resolve(__dirname, "./src/assets/js")],
+        include: [path.resolve(__dirname, "./src/js")],
         loader: "eslint-loader",
       },
       {
-        test: /\.js?$/,
-        include: [path.resolve(__dirname, "./src/assets/js")],
-        loader: "babel-loader",
-      },
+        test: /\.m?js$/,
+        include: [path.resolve(__dirname, "./src/js")],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }
     ],
   },
 };
+
