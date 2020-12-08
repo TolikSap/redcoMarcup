@@ -130,13 +130,13 @@
 
     const animationCounter = () => {
         document.addEventListener("DOMContentLoaded", function () {
-            // const counterContainer = document.getElementById("counterContainer");
+            const counterContainer = document.getElementById("counterContainer");
+            let countNumber;
 
-                function countNumber() {
+            if (typeof (counterContainer) != "undefined" && counterContainer != null) {
+                countNumber = function () {
                     let counter = 0;
                     let offsetToTop = $("#counterContainer").offset().top - window.innerHeight;
-                    console.log(countNumber);
-                    console.log(offsetToTop);
 
                     if (counter == 0 && $(window).scrollTop() > offsetToTop) {
                         $(".counterValue").each(function () {
@@ -161,11 +161,12 @@
                         });
                         counter = 1;
                     }
-                }
+                };
 
                 window.addEventListener("scroll", () => {
                     countNumber();
                 });
+            }
         });
     };
     animationCounter();
