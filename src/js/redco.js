@@ -37,9 +37,9 @@
                 lastScroll = currentScroll;
             });
 
-            window.onscroll = () => {
+            window.addEventListener("scroll", () => {
                 checkHeaderPosition();
-            };
+            });
         });
     };
 
@@ -130,13 +130,13 @@
 
     const animationCounter = () => {
         document.addEventListener("DOMContentLoaded", function () {
-            const counterContainer = document.getElementById("counterContainer");
-            let countNumber;
+            // const counterContainer = document.getElementById("counterContainer");
 
-            if (typeof (counterContainer) != "undefined" && counterContainer != null) {
-                countNumber = function() {
+                function countNumber() {
                     let counter = 0;
                     let offsetToTop = $("#counterContainer").offset().top - window.innerHeight;
+                    console.log(countNumber);
+                    console.log(offsetToTop);
 
                     if (counter == 0 && $(window).scrollTop() > offsetToTop) {
                         $(".counterValue").each(function () {
@@ -161,17 +161,14 @@
                         });
                         counter = 1;
                     }
-                    else {
-                        return;
-                    }
-                };
+                }
 
-                window.onscroll = () => {
+                window.addEventListener("scroll", () => {
                     countNumber();
-                };
-            }
+                });
         });
     };
+    animationCounter();
 
     const btn404BackFunction = () => {
         document.addEventListener("DOMContentLoaded", function (event) {
@@ -192,7 +189,6 @@
     faq();
     progressBar();
     initializeHeaderMobileMenu();
-    animationCounter();
     stickyHeader();
     btn404BackFunction();
 })();

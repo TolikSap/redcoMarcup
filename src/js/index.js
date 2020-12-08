@@ -2,18 +2,15 @@ import Swiper, { Navigation } from "swiper";
 Swiper.use([Navigation]);
 
 const initializeSlider = () => new Swiper(".swiper-container", {
-    loop: true,
+    loop: false,
     speed: 1000,
-    grabCursor: true,
     watchSlidesProgress: true,
     mousewheelControl: true,
     keyboardControl: true,
-    fadeEffect: {
-        crossFade: true
-    },
+    preventClicks: false,
+    preventClicksPropagation: false,
     autoplay: {
         delay: 5000,
-
     },
 });
 
