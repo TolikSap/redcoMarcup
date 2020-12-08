@@ -20,59 +20,39 @@ const initializeSlider = () => new Swiper(".swiper-container", {
 initializeSlider();
 
 const showMapDescr = () => {
-    // const mapSvg = document.getElementById("map__img");
      const mapCities = document.querySelectorAll("circle[data-city]");
-
-
-    // function checkCompliance(element) {
-    //     // let dataCity = element.attributes["data-city"].value;
-        
-
-    //     // mapLists.forEach((list) => {
-    //     //     if (list.attributes["data-city"].value == dataCity){
-                
-    //     //     }
-    //     // });
-
-    //     // for (let i = 0; i <= mapLists.length; i++) {
-    //     //     let descrList = mapLists[i];
-    //     //     descrList.classList.remove("active");
-            
-    //     //     if (dataCity == descrList.attributes["data-city"].value) {
-                
-    //     //         descrList.classList.add("active");
-    //     //     }
-    //     // }
-
-
-    // }
-
-    // function addMultipleEventListeners (element) {
-    //     ["click", "ontouchstart", "mouseover"].forEach(evt => {
-    //         element.addEventListener(evt, checkCompliance(element), false);
-    //     });
-    // }
+     const mapLists = document.getElementsByClassName("map__list");
 
     mapCities.forEach((element) => {
-        element.addEventListener("mouseover", function(element){
-            console.log(element);
+        element.addEventListener("mouseover", function(){
+            for (let i = 0; i < mapLists.length; i++){
+                mapLists[i].classList.remove("active");
+
+                if (element.attributes["data-city"].value == mapLists[i].attributes["data-city"].value){
+                    mapLists[i].classList.add("active");
+                }
+            }
+        }, false);
+        element.addEventListener("click", function(){
+            for (let i = 0; i < mapLists.length; i++){
+                mapLists[i].classList.remove("active");
+
+                if (element.attributes["data-city"].value == mapLists[i].attributes["data-city"].value){
+                    mapLists[i].classList.add("active");
+                }
+            }
+        }, false);
+        element.addEventListener("touchstart", function(){
+            for (let i = 0; i < mapLists.length; i++){
+                mapLists[i].classList.remove("active");
+
+                if (element.attributes["data-city"].value == mapLists[i].attributes["data-city"].value){
+                    mapLists[i].classList.add("active");
+                }
+            }
         }, false);
     });
-
 
 };
 
 showMapDescr();
-// const tbilisi = document.getElementById("tbilisi");
-// const mapInfoMziuri = document.getElementById("mziuri");
-
-// tbilisi.addEventListener("mouseover", function(){
-//     mapInfoMziuri.classList.toggle("active");
-// });
-
-// tbilisi.addEventListener("click touchstart", function(){
-//     mapInfoMziuri.classList.toggle("active");
-// });
-
-
-
