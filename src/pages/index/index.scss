@@ -1059,9 +1059,13 @@
           }
         }
 
+        path.active{
+          fill: #ba0c2f;
+        }
+
         .maps__water{
           &:hover{
-            fill: #77C9F8;
+            fill: #25282b;
           }
         }
       }

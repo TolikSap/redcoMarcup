@@ -19,6 +19,8 @@ initializeSlider();
 const showMapDescr = () => {
      const mapCities = document.querySelectorAll("circle[data-city]");
      const mapLists = document.getElementsByClassName("map__list");
+     const mapImg = document.getElementById("map__img");
+     const mapDistrictActive = document.getElementById("startedPath");
 
     mapCities.forEach((element) => {
         element.addEventListener("mouseover", function(){
@@ -50,6 +52,9 @@ const showMapDescr = () => {
         }, false);
     });
 
+    mapImg.addEventListener("mouseover", function(){
+        mapDistrictActive.classList.remove("active");
+    });
 };
 
 showMapDescr();
