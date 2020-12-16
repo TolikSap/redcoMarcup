@@ -3,6 +3,13 @@
 @import "../../scss/misc/fonts";
 
 .footer{
+    .container{
+        @include tablet{
+            padding-top: 30px;
+            padding-bottom: 20px;
+        }
+    }
+
     background-color: #070707;
     color: #C8C5C5;
     font-family: OpenSans, sans-serif;

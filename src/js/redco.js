@@ -37,9 +37,9 @@
                 lastScroll = currentScroll;
             });
 
-            window.onscroll = () => {
+            window.addEventListener("scroll", () => {
                 checkHeaderPosition();
-            };
+            });
         });
     };
 
@@ -134,7 +134,7 @@
             let countNumber;
 
             if (typeof (counterContainer) != "undefined" && counterContainer != null) {
-                countNumber = function() {
+                countNumber = function () {
                     let counter = 0;
                     let offsetToTop = $("#counterContainer").offset().top - window.innerHeight;
 
@@ -161,17 +161,15 @@
                         });
                         counter = 1;
                     }
-                    else {
-                        return;
-                    }
                 };
 
-                window.onscroll = () => {
+                window.addEventListener("scroll", () => {
                     countNumber();
-                };
+                });
             }
         });
     };
+    animationCounter();
 
     const btn404BackFunction = () => {
         document.addEventListener("DOMContentLoaded", function (event) {
@@ -192,7 +190,6 @@
     faq();
     progressBar();
     initializeHeaderMobileMenu();
-    animationCounter();
     stickyHeader();
     btn404BackFunction();
 })();
