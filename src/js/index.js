@@ -2,7 +2,7 @@ import Swiper, { Navigation } from "swiper";
 Swiper.use([Navigation]);
 
 const initializeSlider = () => new Swiper(".swiper-container", {
-    loop: false,
+    loop: true,
     speed: 1000,
     watchSlidesProgress: true,
     mousewheelControl: true,
