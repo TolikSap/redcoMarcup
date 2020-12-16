@@ -7,6 +7,23 @@
 
 @import "../../components/header/headerStyle";
 @import "../../components/footer/footerStyle";
+
+.investors__page{
+    .progressBar{
+        .progressBar__info{
+            margin-top: 50px;
+        }
+
+        .progressBar__list{
+            top: 25px;
+        }
+    }
+
+    p, span{
+        font-family: OpenSans, sans-serif;
+    }
+}
+
 .investors__intro{
     background-image: url('../img/investors/investors__bg.jpg');
 
@@ -146,6 +163,7 @@
 
 .investors__reason{
     background-color: #25282B;
+    font-family: OpenSans, sans-serif;
 
     .investors__defaultList{
         &_item{
