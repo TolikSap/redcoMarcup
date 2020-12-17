@@ -372,25 +372,12 @@
   .contact__form_input-time--input {
     background: #ffffff;
     font-family: OpenSans, sans-serif;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: textfield;
-    border: none;
+    border-radius: 15px;
+    padding-left: 30px;
+    text-align: center;
     height: 30px;
-    width: 30px;
+    width: 100px;
     outline: none;
-
-    &:nth-of-type(1) {
-      border-top-left-radius: 15px;
-      border-bottom-left-radius: 15px;
-      padding-left: 5px;
-    }
-
-    &:nth-of-type(2) {
-      border-top-right-radius: 15px;
-      border-bottom-right-radius: 15px;
-      padding-right: 5px;
-    }
 
     @include placeholder {
       color: #6a6a6a;
