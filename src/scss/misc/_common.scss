@@ -367,7 +367,8 @@
 
 .contact__form_input-time {
   border-radius: 15px;
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
 
   .contact__form_input-time--input {
     background: #ffffff;
@@ -653,6 +654,11 @@
       font-size: 16px;
       line-height: 22px;
     }
+  }
+
+  .faq__list_item_text.defaultText {
+    position: relative;
+    z-index: initial;
   }
 
   .faq__text {
