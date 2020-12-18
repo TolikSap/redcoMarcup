@@ -7,11 +7,38 @@
 
 @import "../../components/header/headerStyle";
 @import "../../components/footer/footerStyle";
+
+.investors__page{
+    .progressBar{
+        .progressBar__info{
+            margin-top: 50px;
+        }
+
+        .progressBar__list{
+            top: 35px;
+        }
+    }
+
+    p, span{
+        font-family: OpenSans, sans-serif;
+    }
+}
+
 .investors__intro{
     background-image: url('../img/investors/investors__bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
     &_title{
         margin-bottom: 20px;
+    }
+
+    &_subtitle{
+        margin-bottom: 20px;
+        color: #ffffff;
+        text-align: center;
+
     }
 
     .container{
@@ -48,9 +75,14 @@
     background-color: #F5F5F5;
     font-family: OpenSans, sans-serif;
 
-    .investors__descr_text{
+    .investors__descr_text,
+    .investors__descr_title{
         text-align: center;
         color: #000000;
+    }
+
+    .investors__descr_title{
+        margin-bottom: 10px;
     }
 }
 
@@ -60,6 +92,7 @@
     justify-content: space-between;
     position: relative;
     flex-direction: column;
+    margin-top: 20px;
 
     @include tablet{
         flex-direction: row;
@@ -136,6 +169,7 @@
     font-size: 20px;
     line-height: 27px;
     text-align: center;
+    font-weight: 400;
 }
 
 .investors__defaultList_item-text{
@@ -146,8 +180,15 @@
 
 .investors__reason{
     background-color: #25282B;
+    font-family: OpenSans, sans-serif;
 
     .investors__defaultList{
+        margin-bottom: 20px;
+
+        @include laptop{
+            margin-bottom: 40px;
+        }
+
         &_item{
             position: relative;
             padding-top: 130px;
@@ -181,6 +222,12 @@
             }
         }
     }
+
+    .progressBar__text{
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 10px;
+    }
 }
 
 .investors__tips{
@@ -190,7 +237,8 @@
     background-position: center;
     background-attachment: fixed;
 
-    .investors__tipts_title{
+    .investors__tipts_title,
+    .investors__tips_subtitle.defaultText{
         color: #000000;
         margin-bottom: 40px;
         max-width: 700px;
@@ -199,6 +247,7 @@
         padding: 20px;
         backdrop-filter: blur(15px);
         border-radius: 15px;
+        text-align: center;
     }
 
     .investors__defaultList{

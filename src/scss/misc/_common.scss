@@ -367,30 +367,18 @@
 
 .contact__form_input-time {
   border-radius: 15px;
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
 
   .contact__form_input-time--input {
     background: #ffffff;
     font-family: OpenSans, sans-serif;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: textfield;
-    border: none;
+    border-radius: 15px;
+    padding-left: 20px;
+    text-align: center;
     height: 30px;
-    width: 30px;
+    width: 100px;
     outline: none;
-
-    &:nth-of-type(1) {
-      border-top-left-radius: 15px;
-      border-bottom-left-radius: 15px;
-      padding-left: 5px;
-    }
-
-    &:nth-of-type(2) {
-      border-top-right-radius: 15px;
-      border-bottom-right-radius: 15px;
-      padding-right: 5px;
-    }
 
     @include placeholder {
       color: #6a6a6a;
@@ -668,6 +656,11 @@
     }
   }
 
+  .faq__list_item_text.defaultText {
+    position: relative;
+    z-index: initial;
+  }
+
   .faq__text {
     font-family: OpenSans, sans-serif;
     font-style: normal;
@@ -693,7 +686,19 @@
     padding-top: 80px;
     padding-bottom: 80px;
 
-    .container {
+    .defaultText{
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .container{
+      &:first-of-type{
+        padding-top: 0px;
+        padding-bottom: 20px;
+      }
+    }
+
+    .container.faq__container {
       max-width: 1000px;
       display: flex;
       flex-direction: column;
