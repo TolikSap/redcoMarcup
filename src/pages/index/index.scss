@@ -1345,13 +1345,21 @@
       }
 
       .reviews__list_btnPrev {
-        left: 20%;
+        left: 8%;
         background-image: url("../img/icons/arrow__left_reviews.svg");
+
+        @include designDesktop{
+          left: 20%;
+        }
       }
 
       .reviews__list_btnNext {
-        right: 20%;
+        right: 8%;
         background-image: url("../img/icons/arrow__right_reviews.svg");
+
+        @include designDesktop{
+          right: 20%;
+        }
       }
     }
 
