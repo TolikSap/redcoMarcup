@@ -1391,8 +1391,11 @@
         margin-bottom: 15px;
         font-size: 16px;
         line-height: 22px;
-        background-image: url("../img/index/reviews__bg.svg");
-
+        border-radius: 40px;
+        background-color: #25282b;
+        background-image: initial;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.53);
+        
         &::before {
           position: absolute;
           width: 70px;
@@ -1401,6 +1404,27 @@
           left: 30px;
         }
       }
+
+      @include laptop{
+        height: initial;
+        padding-top: 55px;
+        padding-bottom: 50px;
+        margin-bottom: 52px;
+
+        &::after{
+          content: '';
+          position: absolute;
+          bottom: 0;
+          transform: translateY(100%);
+          left: 283px;
+          display: block;
+          width: 118px;
+          height: 35px;
+          background-image: url('../img/index/review__after.svg');
+        }
+      }
+
+
 
       &::before {
         position: absolute;
