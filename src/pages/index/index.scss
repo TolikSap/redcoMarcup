@@ -1220,6 +1220,10 @@
       justify-content: space-around;
     }
 
+    @include laptop{
+      max-width: 1000px;
+    }
+
     @include designDesktop {
       justify-content: space-between;
     }
@@ -1241,6 +1245,8 @@
 
       @include designDesktop {
         width: initial;
+        max-height: 130px;
+        max-width: 200px;
       }
 
       img {
@@ -1249,6 +1255,7 @@
         height: auto;
         max-height: 130px;
         width: auto;
+        object-fit: contain;
       }
     }
   }
