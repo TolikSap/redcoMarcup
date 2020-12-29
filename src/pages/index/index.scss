@@ -52,7 +52,7 @@
     align-items: center;
     min-height: 100vh;
     justify-content: center;
-    // background-image: url('../img/index/intro__bg.jpg');
+    animation: shrink 6s infinite alternate;
 
     @include tablet {
       min-height: 100vh;

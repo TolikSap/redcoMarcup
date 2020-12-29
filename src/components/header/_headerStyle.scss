@@ -226,39 +226,55 @@
 }
 
 .header__langListWrap{
-    display: none;
-    border: 1px solid #fff;
+    display: flex;
     border-radius: 30px;
-    padding: 10px;
     font-weight: normal;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 20px;
     text-align: center;
     color: #fff;
     transition: all 0.3s ease-in-out;
     font-family: OpenSans, sans-serif;
     position: relative;
+    margin-bottom: 40px;
+    margin-top: auto;
 
     @include tablet{
         display: flex;
     }
 
-    &:hover{
-        cursor: pointer;
-        opacity: 0.7;
+    @include laptop{
+        margin-bottom: 0;
+        margin-top: initial;
+        padding: 10px;
+        border: 1px solid #fff;
+        font-size: 15px;
 
-        .header__langList{
-            opacity: 1;
-            visibility: visible;
+        &:hover{
+            cursor: pointer;
+            opacity: 0.7;
+    
+            .header__langList{
+                opacity: 1;
+                visibility: visible;
+            }
         }
-    }
 
-    &::after{
+        &::after{
+            display: block;
+            margin-left: 11px;
+            content: url('../img/icons/arrow__right.svg');
+            width: 8px;
+            height: 4px;
+        }
+    }    
+}
+
+.header__langList_active{
+    display: none;
+
+    @include laptop{
         display: block;
-        margin-left: 11px;
-        content: url('../img/icons/arrow__right.svg');
-        width: 8px;
-        height: 4px;
     }
 }
 
@@ -266,20 +282,45 @@
     padding-top: 5px;
     padding-bottom: 5px;
     transition: all 0.3s ease-in;
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    transform: translateY(100%);
     border-radius: 17px;
-    border: 1px solid #fff;
-    width: 100%;
-    background-color: #25282b;
+    display: flex;
+
+    @include laptop{
+        flex-direction: column;
+        transform: translateY(100%);
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 100%;
+        background-color: #25282b;
+        border: 1px solid #fff;
+    }
 
     &_item{
+        padding: 5px;
+
+        &.active a{
+            color: #ba0c2f;
+
+            @include laptop{
+                color: #fff;
+            }
+        }
+
         &:not(:last-of-type){
-            margin-bottom: 5px;
+            margin-right: 8px;
+        }
+
+        @include laptop{
+            border: none;
+            padding: initial;
+            
+            &:not(:last-of-type){
+                margin-bottom: 5px;
+                margin-right: 0;
+            }
         }
     }
     
