@@ -378,7 +378,7 @@
 
         @include laptop{
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 370px;
             grid-template-rows: 190px 190px;
             grid-auto-flow: dense;
             grid-auto-rows: 190px;
@@ -390,6 +390,15 @@
 
         .blog__content_news{
             margin-bottom: 20px;
+
+            &:hover{
+                cursor: pointer;
+    
+                .news__descr{
+                    transform: translateY(0%);
+                    bottom: 0px;
+                }
+            }
 
             @include tablet{
                 max-width: 49%;
@@ -410,6 +419,15 @@
                     .blog__content_news_title{
                         font-size: 30px;
                         line-height: 41px;
+                        width: 500px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 5%;
+                        position: absolute;
+                    }
+
+                    .blog__content_news_img{
+                        max-width: 770px;
                     }
                 }
 
@@ -422,6 +440,12 @@
                     grid-column: 2;
                     grid-row: 2;
                 }
+
+                .blog__content_news_title{
+                    position: absolute;
+                    top: 2%;
+                    left: 20px;
+                }
             }
             
             &:hover{
@@ -429,21 +453,37 @@
                     bottom: 0px;
                 }
             }
+        }
 
-            .blog__content_news_title{
-                font-size: 20px;
-                line-height: 27px;
-                margin-top: 0;
-                
+        .blog__content_news_title{
+            font-size: 20px;
+            line-height: 27px;
+            margin-top: 0;
+            
+        }
+    }
 
-                @include laptop{
-                    position: absolute;
-                    top: 50%;
-                    left: 20px;
-                    transform: translateY(-50%);
-                }
+    .blog__content_list.sublist{
+        .blog__content_news_img{
+            @include tablet{
+                min-height: 190px;
+                max-height: 190px;
             }
         }
+    }
+
+    .blog__content_news_title{
+        font-size: 20px;
+        line-height: 27px;
+        margin-top: 0;
+    }
+
+    .news__list_item_link{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
     }
 
     .blog__content_news{
@@ -454,10 +494,10 @@
         min-height: 320px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: flex-start;
 
         @include laptop{
-            min-height: 260px;
+            min-height: 190px;
             max-width: 270px;
             margin-bottom: 30px;
         }
@@ -468,8 +508,8 @@
             .news__descr{
                 opacity: 1;
                 z-index: 2;
-                transform: translateY(0);
-                bottom: 40px;
+                transform: translateY(-50%);
+                bottom: 0px;
             }
         }
 
@@ -481,16 +521,21 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            max-height: inherit;
+            max-width: 370px;
 
             @include laptop{
                 position: relative;
                 width: auto;
                 height: auto;
+                max-width: 100%;
             }
         }
     }
 
     .blog__content_news_title{
+        margin-top: 10px;
+        text-transform: uppercase;
         font-family: OpenSansBold, sans-serif;
         color: #fff;
         margin-bottom: 20px;
@@ -499,8 +544,10 @@
         text-shadow: 0px 0px 15px #131313;
 
         @include laptop{
-            margin-top: 20px;
+            position: relative;
+            top: 20px;
             text-align: left;
+            margin-bottom: 0;
         }
     }
 
