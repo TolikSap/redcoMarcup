@@ -8,22 +8,6 @@
 @import "../../components/header/headerStyle";
 @import "../../components/footer/footerStyle";
 
-.investors__page{
-    .progressBar{
-        .progressBar__info{
-            margin-top: 50px;
-        }
-
-        .progressBar__list{
-            top: 35px;
-        }
-    }
-
-    p, span{
-        font-family: OpenSans, sans-serif;
-    }
-}
-
 .investors__intro{
     background-image: url('../img/investors/investors__bg.jpg');
     background-size: cover;
@@ -44,30 +28,6 @@
     .container{
         padding-top: 40px;
         padding-bottom: 80px;
-    }
-
-    .investors__intro_video{
-        iframe{
-            margin: 0 auto;
-            border-radius: 20px;
-            display: block;
-            min-width: 290px;
-            max-width: 70%;
-            min-height: 170px;
-            max-height: 250px;
-            
-
-            @include tablet{
-                max-height: 400px;
-            }
-
-            @include laptop{
-                min-width: 800px;
-                max-width: 800px;
-                min-height: 470px;
-                max-height: 470px;
-            }
-        }
     }
 }
 

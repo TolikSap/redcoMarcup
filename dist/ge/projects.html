@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="GE">
 
 <head>
     <meta charset="UTF-8">
@@ -39,26 +39,17 @@
                         </li>
                         <li class="header__nav_item">
                             <a href="projects.html" class="header__nav_item_link">პროექტები</a>
-                            <ul class="header__sublist">
-                                <li class="header__sublist_item">
-                                    <a href="" class="header__sublist_item_link">Гудаури</a>
-                                </li>
-                                <li class="header__sublist_item">
-                                    <a href="" class="header__sublist_item_link">Батуми</a>
-                                </li>
-                                <li class="header__sublist_item">
-                                    <a href="" class="header__sublist_item_link">Тбилиси</a>
-                                </li>
-                                <li class="header__sublist_item">
-                                    <a href="" class="header__sublist_item_link">Цихисдзири</a>
-                                </li>
-                                <li class="header__sublist_item">
-                                    <a href="" class="header__sublist_item_link">Вели, Бакуриани</a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="header__nav_item">
-                            <a href="#" class="header__nav_item_link">ვიდეო-ტურები </a>
+                            <span class="header__nav_item_link">ლაივ კამერა</span>
+                            <ul class="header__sublist">
+                                <li class="header__sublist_item">
+                                    <a href="FourSeasonsGudauri.html" class="header__sublist_item_link">ფორ სეზონი</a>
+                                </li>
+                                <li class="header__sublist_item">
+                                    <a href="BambooBeachTsikhisdziri.html" class="header__sublist_item_link">ბამბუ ბიჩ ციხისძირი</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="header__nav_item">
                             <a href="investors.html" class="header__nav_item_link">ინვესტორებისთვის</a>
@@ -77,7 +68,7 @@
                             <li class="header__langList_item">
                                 <a href="../" class="header__langList_link">RU</a>
                             </li>
-                            <li class="header__langList_item">
+                            <li class="header__langList_item active">
                                 <a href="/" class="header__langList_link">GE</a>
                             </li>
                             <li class="header__langList_item">
@@ -475,15 +466,16 @@
                 <a href="#" class="footer__logo_link">
                     <img src="../img/icons/logo.svg" alt="logo" class="footer__logo_link-img">
                 </a>
-    
+
                 <ul class="footer__list">
                     <li class="footer__list_item">
-                    <span class="footer__descr">
-                        Девелоперская компания «Редко» была основана в 2012 году, и начиная с того времени, в целях
-                        разработки современных жилых и рекреативных концепций, команда компании следит за динамикой и
-                        новейшими тенденциями индустрии.
-                    </span>
-    
+                        <span class="footer__descr">
+                            Девелоперская компания «Редко» была основана в 2012 году, и начиная с того времени, в целях
+                            разработки современных жилых и рекреативных концепций, команда компании следит за динамикой
+                            и
+                            новейшими тенденциями индустрии.
+                        </span>
+
                         <address class="contacts__widget"> REDCO
                             <a href="tel:+995577230230" class="contacts_link">+995 577 230 230</a>
                             <ul class="contacts__socialList">
@@ -525,38 +517,38 @@
                             <h4 class="contact__form_title">Хотите ознакомительный тур
                                 в Грузию? Оставьте заявку!</h4>
                             <p class="contact__form_text">Время работы компании 9:00 -18:00</p>
-    
+
                             <input type="text" name="" id="contact__form_input-name"
-                                   class="contact__form_input contact__form_input-name" placeholder="Имя">
+                                class="contact__form_input contact__form_input-name" placeholder="Имя">
                             <input type="tel" name="" id="contact__form_input-tel"
-                                   class="contact__form_input-tel contact__form_input" placeholder="Номер телефона">
+                                class="contact__form_input-tel contact__form_input" placeholder="Номер телефона">
                             <input type="email" name="" id="contact__form_input-email"
-                                   class="contact__form_input-email contact__form_input" placeholder="E-mail">
-    
+                                class="contact__form_input-email contact__form_input" placeholder="E-mail">
+
                             <label class="contact__label label__time">
                                 <span class="contact__label_text">Время для звонка</span>
                                 <div class="contact__form_input-time">
                                     <input type="time" class="contact__form_input-time--input">
                                 </div>
-    
+
                             </label>
-    
+
                             <label class="contact__label label__checkbox">
                                 <input type="checkbox" name="" id="contact__form_input-checkbox"
-                                       class="contact__form_input-checkbox">
+                                    class="contact__form_input-checkbox">
                                 <span class="contact__label_text">Я согласен на обработку персональных данных</span>
                             </label>
-    
+
                             <input type="submit" value="ОТПРАВИТЬ" class="contact__form_input-submit"
-                                   id="contact__form_input-submit">
+                                id="contact__form_input-submit">
                         </form>
                     </li>
                 </ul>
-    
-    
+
+
                 <span class="footer__copyright">
-                © Copyright 2012 - 2020 | Real Estate Development Company Ltd | All Rights Reserved
-            </span>
+                    © Copyright 2012 - 2020 | Real Estate Development Company Ltd | All Rights Reserved
+                </span>
             </div>
         </footer>
     </main>
@@ -611,12 +603,14 @@
     </script>
 
 
-    <form action="POST" class="feedback__form">
-        <input type="submit" value="update" class="feedback__form_submit phone">
-        <input type="tel" name="intro__form_text" id="feedback__form_tel" class="feedback__form_tel"
-            placeholder="Введите ваш номер">
-        <input type="submit" value="submit" class="feedback__form_submit arrow">
-    </form>
+    <!-- GEO -->
+    <script>
+        (function (w, d, u) {
+            var s = d.createElement('script'); s.async = true; s.src = u + '?' + (Date.now() / 60000 | 0);
+            var h = d.getElementsByTagName('script')[0]; h.parentNode.insertBefore(s, h);
+        })(window, document, 'https://cdn.bitrix24.com/b3558551/crm/site_button/loader_2_9ipclh.js');
+    </script>
+    <!-- /GEO -->
 
 </body>
 

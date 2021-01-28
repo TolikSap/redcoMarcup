@@ -20,76 +20,67 @@
 <body class="article__page">
     <main class="main" id="main">
         <header class="header" id="header">
-            <div class="container" id="header__container">
-                <div class="header__logo">
-                    <a href="index.html" class="header__logo_link">
-                        <img src="../img/icons/logo.svg" alt="logo" class="header__logo_link_img">
-                    </a>
-                </div>
+        <div class="container" id="header__container">
+            <div class="header__logo">
+                <a href="index.html" class="header__logo_link">
+                    <img src="../img/icons/logo.svg" alt="logo" class="header__logo_link_img">
+                </a>
+            </div>
 
-                <nav class="header__nav">
-                    <ul class="nav__list" id="nav__list">
-                        <li class="header__nav_item">
-                            <a href="index.html" class="header__nav_item_link">HOME</a>
-                        </li>
-                        <li class="header__nav_item">
-                            <a href="aboutUs.html" class="header__nav_item_link">ABOUT US</a>
-                        </li>
-                        <li class="header__nav_item">
-                            <a href="projects.html" class="header__nav_item_link">PROJECTS</a>
-                            <ul class="header__sublist">
-                                <li class="header__sublist_item">
-                                    <a href="" class="header__sublist_item_link">Gudauri</a>
-                                </li>
-                                <li class="header__sublist_item">
-                                    <a href="" class="header__sublist_item_link">Batumi</a>
-                                </li>
-                                <li class="header__sublist_item">
-                                    <a href="" class="header__sublist_item_link">Tbilisi</a>
-                                </li>
-                                <li class="header__sublist_item">
-                                    <a href="" class="header__sublist_item_link">Tsikhisdziri</a>
-                                </li>
-                                <li class="header__sublist_item">
-                                    <a href="" class="header__sublist_item_link">Veli, Bakuriani</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="header__nav_item">
-                            <a href="#" class="header__nav_item_link">VIDEO TOURS </a>
-                        </li>
-                        <li class="header__nav_item">
-                            <a href="investors.html" class="header__nav_item_link">FOR INVESTORS</a>
-                        </li>
-                        <li class="header__nav_item">
-                            <a href="blog.html" class="header__nav_item_link">BLOG</a>
-                        </li>
-                        <li class="header__nav_item">
-                            <a href="contact.html" class="header__nav_item_link">CONTACTS</a>
-                        </li>
-                    </ul>
-
-                    <div class="header__langListWrap">
-                        <p class="header__langList_active">EN</p>
-                        <ul class="header__langList">
-                            <li class="header__langList_item">
-                                <a href="../" class="header__langList_link">RU</a>
+            <nav class="header__nav">
+                <ul class="nav__list" id="nav__list">
+                    <li class="header__nav_item">
+                        <a href="index.html" class="header__nav_item_link">HOME</a>
+                    </li>
+                    <li class="header__nav_item">
+                        <a href="aboutUs.html" class="header__nav_item_link">ABOUT US</a>
+                    </li>
+                    <li class="header__nav_item">
+                        <a href="projects.html" class="header__nav_item_link">PROJECTS</a>
+                    </li>
+                    <li class="header__nav_item">
+                        <a href="#" class="header__nav_item_link">LIVE-VIDEO</a>
+                        <ul class="header__sublist">
+                            <li class="header__sublist_item">
+                                <a href="FourSeasonsGudauri.html" class="header__sublist_item_link">Four Seasons - New Gudauri</a>
                             </li>
-                            <li class="header__langList_item">
-                                <a href="../ge" class="header__langList_link">GE</a>
-                            </li>
-                            <li class="header__langList_item">
-                                <a href="/" class="header__langList_link">EN</a>
+                            <li class="header__sublist_item">
+                                <a href="BambooBeachTsikhisdziri.html" class="header__sublist_item_link">Bamboo Beach - Tsikhisdziri</a>
                             </li>
                         </ul>
-                    </div>
-                </nav>
+                    </li>
+                    <li class="header__nav_item">
+                        <a href="investors.html" class="header__nav_item_link">FOR INVESTORS</a>
+                    </li>
+                    <li class="header__nav_item">
+                        <a href="blog.html" class="header__nav_item_link">BLOG</a>
+                    </li>
+                    <li class="header__nav_item">
+                        <a href="contact.html" class="header__nav_item_link">CONTACTS</a>
+                    </li>
+                </ul>
 
-                <div class="header__menu_mob" id="header__menu_mob">
-                    <a href="#" id="header__menu_mob-btn" class="header__menu_mob-btn"></a>
+                <div class="header__langListWrap">
+                    <p class="header__langList_active">EN</p>
+                    <ul class="header__langList">
+                        <li class="header__langList_item">
+                            <a href="../" class="header__langList_link">RU</a>
+                        </li>
+                        <li class="header__langList_item">
+                            <a href="../ge" class="header__langList_link">GE</a>
+                        </li>
+                        <li class="header__langList_item active">
+                            <a href="/" class="header__langList_link">EN</a>
+                        </li>
+                    </ul>
                 </div>
+            </nav>
+
+            <div class="header__menu_mob" id="header__menu_mob">
+                <a href="#" id="header__menu_mob-btn" class="header__menu_mob-btn"></a>
             </div>
-        </header>
+        </div>
+    </header>
 
         <div class="breadcrumb__list_wrapper">
             <ul class="breadcrumb__list">
@@ -509,13 +500,12 @@
     <script src="../js/redco.min.js"></script>
     <script src="../js/article.min.js"></script>
 
-
-    <form action="POST" class="feedback__form">
-        <input type="submit" value="update" class="feedback__form_submit phone">
-        <input type="tel" name="intro__form_text" id="feedback__form_tel" class="feedback__form_tel"
-            placeholder="Введите ваш номер">
-        <input type="submit" value="submit" class="feedback__form_submit arrow">
-    </form>
+    <script>
+    (function(w,d,u){
+            var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
+            var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://cdn.bitrix24.com/b3558551/crm/site_button/loader_10_ucgwjq.js');
+    </script>
 
 </body>
 
