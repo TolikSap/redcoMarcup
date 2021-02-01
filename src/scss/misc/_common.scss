@@ -25,6 +25,13 @@
   }
 }
 
+.hidden{
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+}
+
 .section__title {
   font-style: normal;
   font-family: Montserrat-Bold, sans-serif;

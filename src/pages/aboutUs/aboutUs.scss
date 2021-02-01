@@ -32,6 +32,7 @@
         .aboutUS__intro_text{
             padding-left: 40px;
             padding-bottom: 50px;
+
         }
     }
     
@@ -85,6 +86,7 @@
 
         @include laptop{
             margin-top: 170px;
+            padding-bottom: 50px;
         }
     }
 

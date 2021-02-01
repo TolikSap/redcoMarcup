@@ -374,8 +374,9 @@
                 padding-top: 0;
                 padding-left: 0;
                 flex-direction: row;
+                justify-content: flex-end;
                 align-items: center;
-                max-width: 800px;
+                max-width: 1000px;
             }
         }
     }

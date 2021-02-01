@@ -418,8 +418,8 @@
     @include tablet {
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas:
-        "a b c"
-        "d b e";
+        "b a c"
+        "b e d";
       display: grid;
       justify-content: space-between;
       align-content: space-between;
@@ -1244,9 +1244,8 @@
       }
 
       @include designDesktop {
-        width: initial;
-        max-height: 130px;
-        max-width: 200px;
+        width: 20%;
+        max-height: 10px;
       }
 
       img {
