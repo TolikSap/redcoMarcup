@@ -73,7 +73,7 @@
 
     &__logo {
         max-width: 80px;
-        max-height: 65px;
+        max-height: 80px;
         z-index: 2;
 
         &_link {
@@ -84,9 +84,9 @@
 
             &_img {
                 width: 100%;
-                height: 100%;
+                height: 70px;
                 display: block;
-                object-fit: cover;
+                object-fit: contain;
                 max-height: inherit;
             }
         }
