@@ -1216,4 +1216,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  iframe{
+    &:not(:last-of-type){
+      margin-bottom: 30px;
+    }
+  }
 }
