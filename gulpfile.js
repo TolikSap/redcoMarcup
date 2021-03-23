@@ -107,7 +107,7 @@ function jekyll() {
 
 function html(){
   return (
-    gulp.src("src/pages/**/*.html")
+    gulp.src("src/pages/**/*/")
     .pipe(rename({dirname: ""}))
     .pipe(fileinclude())
     .pipe(htmlmin({ removeComments: true }))
@@ -121,7 +121,7 @@ function html(){
 function watchFiles() {
   gulp.watch(["./src/scss/**/*", "./src/pages/**/*.scss"], css);
   gulp.watch("./src/js/**/*", gulp.series(scriptsLint, scripts));
-  gulp.watch("./src/pages/**/*.html",gulp.series(html, browserSyncReload)
+  gulp.watch("./src/pages/**/*/",gulp.series(html, browserSyncReload)
   );
   gulp.watch("./src/assets/**/*", images);
 }
