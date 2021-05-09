@@ -9,7 +9,7 @@
 @import "../../components/footer/footerStyle";
 
 .aboutUS__intro{
-    background-image: url('../img/aboutUS/aboutUS__intro_bg.png');
+    background-image: url('../images/aboutUS/aboutUS__intro_bg.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -194,13 +194,13 @@
 }
 
 .aboutUS__stats{
-    background-image: url('../img/aboutUS/aboutUS__stats_mob.jpg');
+    background-image: url('../images/aboutUS/aboutUS__stats_mob.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 
     @include tablet{
-        background-image: url('../img/aboutUS/aboutUS__stats.png');
+        background-image: url('../images/aboutUS/aboutUS__stats.png');
     }
 
     .container{
@@ -352,15 +352,15 @@
 
             .contacts__list_item{
                 &:nth-of-type(1) .contacts__list_item_link{    
-                    background-image: url('../img/aboutUS/skype.svg');
+                    background-image: url('../images/aboutUS/skype.svg');
                 }
             
                 &:nth-of-type(2) .contacts__list_item_link{
-                    background-image: url('../img/aboutUS/viber.svg');
+                    background-image: url('../images/aboutUS/viber.svg');
                 }
             
                 &:nth-of-type(3) .contacts__list_item_link{
-                    background-image: url('../img/aboutUS/telegram.svg');
+                    background-image: url('../images/aboutUS/telegram.svg');
                 }
 
                 .contacts__list_item_link{

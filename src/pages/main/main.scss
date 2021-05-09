@@ -4,15 +4,16 @@
 @import "../../scss/misc/common";
 @import "../../scss/misc/adjustment";
 @import "../../scss/misc/normalize";
+
+@import "../../components/header/headerStyle";
+@import "../../components/footer/footerStyle";
+@import "../contact/contact.scss";
+@import "../investors/investors.scss";
 @import "../404/404.scss";
 @import "../aboutUs/aboutUs.scss";
 @import "../article/article.scss";
 @import "../blog/blog.scss";
-@import "../contact/contact.scss";
-@import "../investors/investors.scss";
-
-@import "../../components/header/headerStyle";
-@import "../../components/footer/footerStyle";
+@import "../projects/projects.scss";
 
 .main-page {
   .intro {
@@ -224,6 +225,72 @@
     }
   }
 
+  .investors__descr_list {
+      font-size: 16px;
+      line-height: 22px;
+      color: #f5f5f5;
+      font-weight: normal;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: calc(100% - 30px);
+      margin-left: auto;
+      margin-right: auto;
+
+      @include tablet {
+        max-width: 700px;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-left: initial;
+        margin-right: initial;
+        margin-bottom: 16px;
+      }
+
+      .investors__descr_list_item {
+        padding-top: 5px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        &::before {
+          content: "";
+          display: block;
+          min-width: 10px;
+          min-height: 10px;
+          max-width: 10px;
+          max-height: 10px;
+          background: #ba0c2f;
+          border-radius: 50%;
+          margin-right: 10px;
+          margin-top: 8px;
+          margin-bottom: 5px;
+        }
+
+        &:first-of-type,
+        &:nth-of-type(2) {
+          margin-bottom: 15px;
+        }
+
+        @include tablet {
+          padding-left: 10px;
+          padding-top: 0;
+          flex-direction: row;
+          align-items: flex-start;
+          max-width: 49%;
+          justify-content: flex-start;
+
+          &:first-of-type,
+          &:nth-of-type(2) {
+            margin-bottom: 43px;
+          }
+
+          &:nth-of-type(odd) {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
   .investors {
     background-repeat: no-repeat;
     background-size: cover;
@@ -343,72 +410,6 @@
       }
     }
 
-    .investors__descr_list {
-      font-size: 16px;
-      line-height: 22px;
-      color: #f5f5f5;
-      font-weight: normal;
-      display: flex;
-      flex-wrap: wrap;
-      max-width: calc(100% - 30px);
-      margin-left: auto;
-      margin-right: auto;
-
-      @include tablet {
-        max-width: 700px;
-        padding-left: 30px;
-        padding-right: 30px;
-        margin-left: initial;
-        margin-right: initial;
-        margin-bottom: 16px;
-      }
-
-      .investors__descr_list_item {
-        padding-top: 5px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-
-        &::before {
-          content: "";
-          display: block;
-          min-width: 10px;
-          min-height: 10px;
-          max-width: 10px;
-          max-height: 10px;
-          background: #ba0c2f;
-          border-radius: 50%;
-          margin-right: 10px;
-          margin-top: 8px;
-          margin-bottom: 5px;
-        }
-
-        &:first-of-type,
-        &:nth-of-type(2) {
-          margin-bottom: 15px;
-        }
-
-        @include tablet {
-          padding-left: 10px;
-          padding-top: 0;
-          flex-direction: row;
-          align-items: flex-start;
-          max-width: 49%;
-          justify-content: flex-start;
-
-          &:first-of-type,
-          &:nth-of-type(2) {
-            margin-bottom: 43px;
-          }
-
-          &:nth-of-type(odd) {
-            margin-right: 10px;
-          }
-        }
-      }
-    }
-
     .investors__descr_img {
       display: block;
       object-fit: contain;
@@ -512,7 +513,7 @@
       }
     }
 
-    .project__list_item-link {
+    .projects__list_item-link {
       display: block;
       width: 100%;
       height: 100%;
@@ -1636,4 +1637,17 @@
       margin-bottom: 15px;
     }
   }
+}
+
+.main-page {
+  .breadcrumb__list_wrapper {
+    display: none;
+  }
+}
+
+
+//  drupal things
+
+#drupal-live-announce {
+  display: none;
 }

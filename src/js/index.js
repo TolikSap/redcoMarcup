@@ -5,6 +5,7 @@ Swiper.use([Navigation, Autoplay]);
 const initializeSlider = () => new Swiper(".swiper-container", {
     speed: 2000,
     loop: true,
+    slidesPerView: 1,
     watchSlidesProgress: true,
     mousewheelControl: true,
     keyboardControl: true,

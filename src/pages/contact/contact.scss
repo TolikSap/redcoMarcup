@@ -18,7 +18,7 @@
     }
 
     .contacts__intro {
-        background-image: url("../img/contacts/contacts__bg.png");
+        background-image: url("../images/contacts/contacts__bg.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -27,11 +27,11 @@
         transition: all 0.5s ease-in;
 
         &.Ukraine {
-            background-image: url("../img/contacts/contacts__ua.jpg");
+            background-image: url("../images/contacts/contacts__ua.jpg");
         }
 
         &.russia {
-            background-image: url("../img/contacts/contacts__ru.jpg");
+            background-image: url("../images/contacts/contacts__ru.jpg");
         }
 
         .container {
@@ -143,15 +143,15 @@
         }
 
         &:nth-child(1)::before {
-            background-image: url("../img/contacts/contacts__phone.svg");
+            background-image: url("../images/contacts/contacts__phone.svg");
         }
 
         &:nth-child(2)::before {
-            background-image: url("../img/contacts/contacts__location.png");
+            background-image: url("../images/contacts/contacts__location.png");
         }
 
         &:nth-child(3)::before {
-            background-image: url("../img/contacts/contacs__email.png");
+            background-image: url("../images/contacts/contacs__email.png");
         }
 
         &:nth-child(2) {
@@ -256,15 +256,15 @@
             align-items: center;
 
             &:nth-child(1) {
-                background-image: url("../img/icons/instagram.svg");
+                background-image: url("../images/icons/instagram.svg");
             }
 
             &:nth-child(2) {
-                background-image: url("../img/icons/facebook.svg");
+                background-image: url("../images/icons/facebook.svg");
             }
 
             &:nth-child(3) {
-                background-image: url("../img/icons/youtube.svg");
+                background-image: url("../images/icons/youtube.svg");
             }
 
             .contacts__sublist_link {
@@ -280,7 +280,7 @@
         flex-direction: column;
         padding-top: 40px;
         padding-bottom: 40px;
-        background-image: url("../img/contacts/contacts__form.png");
+        background-image: url("../images/contacts/contacts__form.png");
         background-repeat: no-repeat;
         background-size: cover;
         font-family: OpenSans, sans-serif;

@@ -9,7 +9,7 @@
 @import "../../components/footer/footerStyle";
 
 .investors__intro{
-    background-image: url('../img/investors/investors__bg.jpg');
+    background-image: url('../images/investors/investors__bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -83,35 +83,35 @@
     }
 
     &:nth-child(1)::before{
-        background-image: url('../img/investors/investors__icons_1.png');
+        background-image: url('../images/investors/investors__icons_1.png');
     }
 
     &:nth-child(2)::before{
-        background-image: url('../img/investors/investors__icons_2.png');
+        background-image: url('../images/investors/investors__icons_2.png');
     }
 
     &:nth-child(3)::before{
-        background-image: url('../img/investors/investors__icons_3.png');
+        background-image: url('../images/investors/investors__icons_3.png');
     }
 
     &:nth-child(4)::before{
-        background-image: url('../img/investors/investors__icons_4.png');
+        background-image: url('../images/investors/investors__icons_4.png');
     }
 
     &:nth-child(5)::before{
-        background-image: url('../img/investors/investors__icons_5.png');
+        background-image: url('../images/investors/investors__icons_5.png');
     }
 
     &:nth-child(6)::before{
-        background-image: url('../img/investors/investors__icons_6.svg');
+        background-image: url('../images/investors/investors__icons_6.svg');
     }
 
     &:nth-child(7)::before{
-        background-image: url('../img/investors/investors__icons_7.png');
+        background-image: url('../images/investors/investors__icons_7.png');
     }
 
     &:nth-child(8)::before{
-        background-image: url('../img/investors/investors__icons_8.svg');
+        background-image: url('../images/investors/investors__icons_8.svg');
     }
 
     @include tablet{
@@ -191,7 +191,7 @@
 }
 
 .investors__tips{
-    background-image: url('../img/investors/investors__tips_bg.png');
+    background-image: url('../images/investors/investors__tips_bg.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -218,19 +218,19 @@
             padding: 125px 25px 25px;
 
             &:nth-child(1)::before{
-                background-image: url('../img/investors/investors__icons_5.png');
+                background-image: url('../images/investors/investors__icons_5.png');
             }
     
             &:nth-child(2)::before{
-                background-image: url('../img/investors/investors__icons_6.svg');
+                background-image: url('../images/investors/investors__icons_6.svg');
             }
     
             &:nth-child(3)::before{
-                background-image: url('../img/investors/investors__icons_7.png');
+                background-image: url('../images/investors/investors__icons_7.png');
             }
     
             &:nth-child(4)::before{
-                background-image: url('../img/investors/investors__icons_8.svg');
+                background-image: url('../images/investors/investors__icons_8.svg');
             }
         }
     }

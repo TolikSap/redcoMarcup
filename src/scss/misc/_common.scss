@@ -134,7 +134,7 @@
     display: flex;
     border-style: none;
     margin-right: 0px;
-    background-image: url("../img/icons/phone.svg");
+    background-image: url("../images/icons/phone.svg");
     background-repeat: no-repeat;
     background-position: center;
 
@@ -150,7 +150,7 @@
     border-radius: 50%;
     border: 1px solid #ba0c2f;
     margin-right: 10px;
-    background-image: url("../img/icons/arrow__right_red.svg");
+    background-image: url("../images/icons/arrow__right_red.svg");
     background-repeat: no-repeat;
     background-position: center;
     display: none;
@@ -250,19 +250,19 @@
 
     &.ge {
       &::before {
-        background-image: url("../img/common/ge.svg");
+        background-image: url("../images/common/ge.svg");
       }
     }
 
     &.ru {
       &::before {
-        background-image: url("../img/common/ru.svg");
+        background-image: url("../images/common/ru.svg");
       }
     }
 
     &.ua {
       &::before {
-        background-image: url("../img/common/ua.svg");
+        background-image: url("../images/common/ua.svg");
       }
     }
   }
@@ -281,19 +281,19 @@
       background-size: contain;
 
       &:nth-of-type(1) {
-        background-image: url("../img/icons/instagram.svg");
+        background-image: url("../images/icons/instagram.svg");
         width: 20px;
         height: 20px;
       }
 
       &:nth-of-type(2) {
-        background-image: url("../img/icons/facebook.svg");
+        background-image: url("../images/icons/facebook.svg");
         width: 16px;
         height: 20px;
       }
 
       &:nth-of-type(3) {
-        background-image: url("../img/icons/youtube.svg");
+        background-image: url("../images/icons/youtube.svg");
         width: 23px;
         height: 23px;
       }
@@ -318,6 +318,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .form-item {
+    margin-bottom: 10px;
+  }
 
   .contact__form_title {
     text-align: center;
@@ -358,11 +362,18 @@
     }
 
     @include placeholder {
-      color: #b4b4b4;
+      color: #25282b;
       font-size: 12px;
       line-height: 16px;
       font-family: OpenSans, sans-serif;
     }
+  }
+
+  .contact__label_text {
+      color: #25282b;
+      font-size: 12px;
+      line-height: 16px;
+      font-family: OpenSans, sans-serif;
   }
 
   .contact__label {
@@ -417,6 +428,8 @@
   border-radius: 15px;
   display: flex;
   justify-content: center;
+  border-color: transparent;
+  padding-left: 10px;
 
   .contact__form_input-time--input {
     background: #ffffff;
@@ -541,15 +554,15 @@
     }
 
     &:nth-child(1) {
-      background-image: url("../img/common/project_1.png");
+      background-image: url("../images/common/project_1.png");
     }
 
     &:nth-child(2) {
-      background-image: url("../img/common/project_2.png");
+      background-image: url("../images/common/project_2.png");
     }
 
     &:nth-child(3) {
-      background-image: url("../img/common/project_3.png");
+      background-image: url("../images/common/project_3.png");
     }
 
     &-link {
@@ -633,7 +646,7 @@
       top: 20px;
       width: 13px;
       height: 6px;
-      content: url("../img/index/arrow__bottom.svg");
+      content: url("../images/index/arrow__bottom.svg");
     }
 
     &.active {
@@ -645,7 +658,7 @@
         top: 20px;
         width: 13px;
         height: 6px;
-        content: url("../img/index/arrow__top.svg");
+        content: url("../images/index/arrow__top.svg");
       }
 
       &::before {
@@ -937,31 +950,31 @@
 
     &:nth-child(1) {
       .progressBar__list_item-img {
-        background-image: url("../img/progressBar/progressBar_1.png");
+        background-image: url("../images/progressBar/progressBar_1.png");
       }
     }
 
     &:nth-child(2) {
       .progressBar__list_item-img {
-        background-image: url("../img/progressBar/progressBar_2.png");
+        background-image: url("../images/progressBar/progressBar_2.png");
       }
     }
 
     &:nth-child(3) {
       .progressBar__list_item-img {
-        background-image: url("../img/progressBar/progressBar_3.png");
+        background-image: url("../images/progressBar/progressBar_3.png");
       }
     }
 
     &:nth-child(4) {
       .progressBar__list_item-img {
-        background-image: url("../img/progressBar/progressBar_4.png");
+        background-image: url("../images/progressBar/progressBar_4.png");
       }
     }
 
     &:nth-child(5) {
       .progressBar__list_item-img {
-        background-image: url("../img/progressBar/progressBar_5.png");
+        background-image: url("../images/progressBar/progressBar_5.png");
       }
 
       .progressBar__list_item-text {
@@ -1108,7 +1121,7 @@
     margin-bottom: 15px;
 
     .rating {
-      background-image: url("../img/blog/rating.svg");
+      background-image: url("../images/blog/rating.svg");
       width: 108px;
       height: 16px;
       margin-right: auto;
@@ -1123,7 +1136,7 @@
       font-family: OpenSans, sans-serif;
 
       &::before {
-        content: url("../img/index/like.svg");
+        content: url("../images/index/like.svg");
         margin-right: 5px;
         width: 13.5px;
         height: 12px;
@@ -1138,7 +1151,7 @@
       font-family: OpenSans, sans-serif;
 
       &::before {
-        content: url("../img/index/comment.svg");
+        content: url("../images/index/comment.svg");
         margin-right: 5px;
         width: 13.5px;
         height: 12px;
@@ -1212,7 +1225,7 @@
 }
 
 .liveVideo__intro {
-  background-image: url("../img/video/video__bg.jpg");
+  background-image: url("../images/video/video__bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

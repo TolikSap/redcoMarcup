@@ -181,6 +181,7 @@
 
     .header__nav_item_link {
         color: #fff;
+        text-transform: uppercase;
         text-shadow: 3px 2px 4px rgba(35, 33, 38, 0.96);
     }
 
@@ -277,7 +278,7 @@
         &::after {
             display: block;
             margin-left: 11px;
-            content: url("../img/icons/arrow__right.svg");
+            content: url("../images/icons/arrow__right.svg");
             width: 8px;
             height: 4px;
         }
@@ -315,7 +316,7 @@
     &_item {
         padding: 5px;
 
-        &.active a {
+        &.is-active a {
             color: #ba0c2f;
 
             @include laptop {
@@ -336,17 +337,19 @@
                 margin-right: 0;
             }
         }
-    }
 
-    .header__langList_link {
-        transition: all 0.3s ease-in;
-        color: #fff;
-        text-decoration: none;
-
-        &:hover {
-            color: #ba0c2f;
+        a {
+            transition: all 0.3s ease-in;
+            color: #fff;
+            text-decoration: none;
+    
+            &:hover {
+                color: #ba0c2f;
+            }
         }
     }
+
+    
 }
 
 .header {
@@ -413,7 +416,7 @@
                         top: 6px;
                         width: 19px;
                         height: 10px;
-                        background-image: url("../img/icons/arrow__bottom.svg");
+                        background-image: url("../images/icons/arrow__bottom.svg");
                         background-size: cover;
                         background-repeat: no-repeat;
                         background-position: center;

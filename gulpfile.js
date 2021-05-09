@@ -71,7 +71,7 @@ function css() {
     }}))
     .pipe(sass({ outputStyle: "expanded" }))
     .pipe(rename({ suffix: ".min" }))
-    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(postcss([autoprefixer()]))
     .pipe(rename({dirname: ""}))
     .pipe(gulp.dest("./dist/css/"))
     .pipe(browsersync.stream());
